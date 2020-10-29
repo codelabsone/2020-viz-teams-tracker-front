@@ -4,3 +4,9 @@
 
 html, body { height: 100%; }
 body { margin: 0; font-family: Roboto, "Helvetica Neue", sans-serif; color: $viz-grey }
+
+.mat-toolbar.mat-primary {
+  background: #ff4e00;
+  color: #fff;
+  font-family: 'Roboto';
+}
