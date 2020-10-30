@@ -11,5 +11,8 @@
 .username {
   right: 2em;
   position: fixed;
-  
+}
+
+app-teams-list {
+  height: calc(100vh - 64px);
 }
