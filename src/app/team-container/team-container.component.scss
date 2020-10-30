@@ -1,0 +1,17 @@
+mat-card {
+  margin-right: 3vw;
+  margin-top: 4vw;
+  width: 45vw;
+  float: right;
+  height: 72%;
+}
+mat-card-title {
+  text-align: center;
+  margin: 0;
+  position: absolute;
+  top: 50%;
+  left: 29%;
+  -ms-transform: translateY(-50%);
+  transform: translateY(-50%);
+  overflow: hidden;
+}
