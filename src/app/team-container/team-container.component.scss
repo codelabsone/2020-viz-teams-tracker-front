@@ -20,8 +20,16 @@ mat-card-title {
   color: $viz-grey;
 }
 
-.box{
-border-color: black;
-border-style: solid;
-width: 100px;
+mat-grid-tile{
+  border-style: solid;
+}
+
+.info{
+  padding-top: 37px;
+}
+
+.master{
+  justify-content: space-between;
+  display: flex;
+  flex-direction: row;
 }

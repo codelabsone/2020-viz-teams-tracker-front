@@ -1,21 +1,20 @@
 <mat-card>
 
-  <mat-card-title>Select a team to view members.</mat-card-title>
+  <mat-card-title *ngIf="members.length === 0">Select a team to view members.</mat-card-title>
 
-  <!-- <div *ngFor="let member of members">
-    <div class="box">
-      <h5>{{member.first_name}} {{member.last_name}}</h5>
-      <h6>{{member.title}}</h6>
-    </div>
-  </div> -->
-
-  <mat-grid-list cols="2" rowHeight="2:1" *ngFor="let member of members">
+ <div>
+  <mat-grid-list cols="2" rowHeight="3:1" *ngFor="let member of members">
     <mat-grid-tile>
-      <img src="../assets/images/">
-    <h5>{{member.first_name}} {{member.last_name}}</h5>
-
-    <h6>{{member.team_name}}</h6>
+    <div class="master">
+      <div class="image">
+        <img src="./assets/images/kitty.jpg" height="80px">
+      </div>
+      <div class="info">
+        <h4>{{member.first_name}} {{member.last_name}} <br> {{member.title}}</h4>
+      </div>
+    </div>
     </mat-grid-tile>
   </mat-grid-list>
+ </div>
 
 </mat-card>
