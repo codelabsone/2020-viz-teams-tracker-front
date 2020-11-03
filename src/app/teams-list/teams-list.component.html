@@ -1,8 +1,17 @@
 <mat-card>
   <mat-card-header>Teams</mat-card-header>
+
   <mat-divider></mat-divider>
-
-    <mat-card-content>
-
-    </mat-card-content>
+  <mat-expansion-panel *ngFor="let team of teams" hideToggle>
+    <mat-expansion-panel-header>
+      <mat-panel-title>
+        {{ team.name }}
+      </mat-panel-title>
+      <mat-panel-description>
+        {{ team.description }}
+      </mat-panel-description>
+    </mat-expansion-panel-header>
+    <p>This is the primary content of the panel.</p>
+  </mat-expansion-panel>
+  <mat-card-content></mat-card-content>
 </mat-card>
