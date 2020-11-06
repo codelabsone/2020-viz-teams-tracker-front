@@ -4,6 +4,7 @@ import { Component, OnInit } from '@angular/core';
 import { MatExpansionModule } from '@angular/material/expansion';
 import { Team } from '../model/team';
 import { Member } from '../model/member';
+import { MatDialog } from '@angular/material/dialog';
 
 @Component({
   selector: 'app-teams-list',
@@ -19,10 +20,25 @@ export class TeamsListComponent implements OnInit {
     new Team('Banananana', ''),
   ]
 
-
-  constructor() { }
+  constructor(
+    public dialog: MatDialog
+  ) { }
 
   ngOnInit(): void {
   }
 
+  openDialog() {
+    const dialogRef = this.dialog.open(Modal);
+
+    dialogRef.afterClosed().subscribe(result => {
+      console.log(`Dialog result: ${result}`);
+    });
+  }
+
 }
+
+@Component({
+  selector: 'modal',
+  templateUrl: 'modal.html',
+})
+export class Modal {}

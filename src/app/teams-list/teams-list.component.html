@@ -11,7 +11,7 @@
         {{ team.description }}
       </mat-panel-description>
     </mat-expansion-panel-header>
-    <mat-action-row><mat-icon id="addMember">person_add</mat-icon></mat-action-row>
+    <mat-action-row><button mat-button (click)="openDialog()"><mat-icon id="addMember">person_add</mat-icon></button></mat-action-row>
   </mat-expansion-panel>
   <mat-card-content></mat-card-content>
 
