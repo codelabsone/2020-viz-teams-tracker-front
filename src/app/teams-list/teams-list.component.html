@@ -11,6 +11,14 @@
         {{ team.description }}
       </mat-panel-description>
     </mat-expansion-panel-header>
+    <div class="dog" *ngFor="let pic of pics">
+        <img
+        src= "{{ pic }}"
+        alt=""
+        matTooltip="Info about the action"
+        matTooltipPosition="above"
+        aria-label="Button that displays a tooltip when focused or hovered over">
+    </div>
   </mat-expansion-panel>
   <mat-card-content></mat-card-content>
 

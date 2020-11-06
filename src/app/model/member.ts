@@ -3,14 +3,14 @@ export class Member {
   first_name: string
   last_name: string
   team_name: string
-  image: string
+  image: string[]
   title: string
   constructor({
       id = 0,
       first_name = '',
       last_name = '',
       team_name = '',
-      image = '',
+      image = [],
       title = '',
       ...rest
   }) {
