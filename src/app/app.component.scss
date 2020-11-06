@@ -11,3 +11,21 @@
   right: 2em;
   position: fixed;
 }
+
+app-teams-list {
+  height: calc(100vh - 64px);
+  width: 50%;
+}
+
+app-team-container {
+  height: calc(100vh - 64px);
+  width: 50%;
+  margin-top: 55px;
+  margin-left: 2%;
+}
+
+.teams-list {
+  display: flex;
+  width: 100%;
+  background-color: lightgrey;
+}
