@@ -32,5 +32,13 @@ export const MEMBERS: Member[] = [
     "team_name": "Cobras",
     "image": "null",
     "title": "Wizard"
+  },
+  {
+    "id": 5,
+    "first_name": "Jerry",
+    "last_name": "Potter",
+    "team_name": "Cobras",
+    "image": "null",
+    "title": "Wizard"
   }
 ]
