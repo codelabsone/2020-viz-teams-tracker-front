@@ -1,14 +1,48 @@
 @import "./src/variables.scss";
 
-
 mat-card {
-  width: 45vw;
-  // float: right;
   height: 76%;
+  width: 45vw;
+
+}
+
+mat-card-title {
+  color: $viz-grey;
+}
+
+.placeholder-text {
+  width: 100%;
+  height: 100%;
   display: flex;
   justify-content: center;
   align-items: center;
 }
-mat-card-title {
+
+.team-name {
+  color: $viz-grey;
+  padding-top: 2%;
+  padding-left: 2%;
+  padding-bottom: 3%;
+  width: 100%;
+}
+
+.team-list {
+  display: flex;
+  flex-direction: row;
+  max-width: 100%;
+  flex-wrap: wrap;
+  padding-left: 2%;
+}
+
+.member {
+  display: flex;
+  flex-direction: row;
+  width: 50%;
+  padding-bottom: 2%;
+}
+
+.info {
+  padding-top: 10%;
+  padding-left: 1%;
   color: $viz-grey;
 }

@@ -1,4 +1,8 @@
 import { Component, OnInit } from '@angular/core';
+import { MemberService } from '.././services/member.service';
+import { MEMBERS } from '../mock-data/members';
+import { Member } from '../models/member';
+
 
 @Component({
   selector: 'app-team-container',
@@ -7,9 +11,17 @@ import { Component, OnInit } from '@angular/core';
 })
 export class TeamContainerComponent implements OnInit {
 
-  constructor() { }
+  members = MEMBERS
+  // members = []
+  constructor(
+    private memberService: MemberService
+  ) { }
 
   ngOnInit(): void {
+  }
+
+  showMembers(){
+
   }
 
 }
