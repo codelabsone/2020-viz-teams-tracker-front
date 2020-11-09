@@ -10,6 +10,7 @@ import { AppComponent } from './app.component';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { TeamsListComponent } from './teams-list/teams-list.component';
 import { TeamContainerComponent } from './team-container/team-container.component';
+import {MatTooltipModule} from '@angular/material/tooltip';
 import { HttpClientModule } from '@angular/common/http';
 
 @NgModule({
@@ -26,6 +27,7 @@ import { HttpClientModule } from '@angular/common/http';
     HttpClientModule,
     MatDividerModule,
     MatExpansionModule,
+    MatTooltipModule,
     MatIconModule,
     MatDialogModule
   ],
