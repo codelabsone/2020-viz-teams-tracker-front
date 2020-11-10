@@ -17,11 +17,6 @@ margin-left: -20px;
 mat-expansion-panel-body {
   padding: 2px;
   margin-left: 10px;
-  // display: flex;
-}
-
-.vbc {
-  text-align: right;
 }
 
 button {
@@ -32,7 +27,7 @@ button {
   height: 5.5vh;
 }
 
-.dog {
+.team-member-container {
   display: flex;
   justify-content: space-between;
 }

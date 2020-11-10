@@ -12,7 +12,6 @@ import { Member } from '../models/member';
 export class TeamContainerComponent implements OnInit {
 
   members = MEMBERS
-  // members = []
   constructor(
     private memberService: MemberService
   ) { }
