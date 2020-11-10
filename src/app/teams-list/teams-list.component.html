@@ -12,9 +12,7 @@
       </mat-panel-description>
     </mat-expansion-panel-header>
     <mat-action-row>
-      <button mat-button (click)="openDialog()">
-        <mat-icon id="addMember">person_add</mat-icon>
-      </button>
+        <mat-icon id="addMember" (click)="openDialog()">person_add</mat-icon>
     </mat-action-row>
     <div class="team-member-container">
       <img *ngFor="let member of team.members"
@@ -26,6 +24,4 @@
         aria-label="Button that displays a tooltip when focused or hovered over">
     </div>
   </mat-expansion-panel>
-  <mat-card-content></mat-card-content>
-
 </mat-card>
