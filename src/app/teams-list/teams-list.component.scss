@@ -36,6 +36,41 @@ img {
   color:  rgba(69, 90, 100, .87);
 }
 
+#add_box {
+  color:  rgba(69, 90, 100, .87);
+}
+
+.team-list-container {
+  display: flex;
+  flex-direction: column;
+}
+
+.team-list-card-container {
+  display: flex;
+  height: 100%;
+  flex-direction: column;
+}
+
+.team-list-card-content {
+  height: 100%;
+  overflow-y: auto;
+}
+
+.team-list-card-actions {
+  border-top: solid 1px lightgray;
+  height: 20px;
+  display: flex;
+  justify-content: flex-end;
+}
+
+.team-list-action-buttons {
+  margin: 0 16px;
+}
+
+
+
+
+
 
 
 

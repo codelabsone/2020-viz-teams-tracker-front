@@ -1,7 +1,9 @@
-<mat-card>
-  <mat-card-header>Teams</mat-card-header>
-
-  <mat-divider></mat-divider>
+<mat-card class="team-list-container">
+  <div class="team-list-card-container">
+  <mat-card-header style="border-bottom: solid 1px lightgray;">
+    Teams
+  </mat-card-header>
+  <mat-card-content class="team-list-card-content">
   <mat-expansion-panel *ngFor="let team of teams">
     <mat-expansion-panel-header>
       <mat-panel-title>
@@ -21,6 +23,19 @@
         aria-label="Button that displays a tooltip when focused or hovered over">
     </div>
   </mat-expansion-panel>
-  <mat-card-content></mat-card-content>
+  </mat-card-content>
+    <mat-card-actions class="team-list-card-actions">
+        <span class="team-list-action-buttons">
+          <mat-icon
+          #tooltip="matTooltip"
+          matTooltip="Add Team"
+          matTooltipPosition="above"
+          matTooltipHideDelay="1000"
+          aria-label="Button that displays a tooltip that hides when scrolled out of the container"
+          class="example-button"
+          id="add_box">add_box</mat-icon>
+        </span>
+  </mat-card-actions>
+  </div>
 
 </mat-card>
