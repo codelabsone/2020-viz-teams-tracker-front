@@ -14,26 +14,31 @@ color: grey;
 margin-left: -20px;
 }
 
-.vbc {
-  text-align: right;
+mat-expansion-panel-body {
+  padding: 2px;
+  margin-left: 10px;
 }
 
 button {
   margin-left: 2.5%;
 }
 
-img {
-  width: 30px;
+.member-pic {
+  height: 5.5vh;
 }
 
-.dog {
-  display: inline-block;
-  width: 8%;
-  margin-top: 2.5%;
+.team-member-container {
+  display: flex;
+  justify-content: space-between;
+}
+
+.mat-exspansion-panel-body {
+  padding: 1vw;
 }
 
 #addMember{
   color:  rgba(69, 90, 100, .87);
+  cursor: pointer;
 }
 
 #add_box {
@@ -70,6 +75,9 @@ img {
 
 
 
+// .thing{
+
+// }
 
 
 
