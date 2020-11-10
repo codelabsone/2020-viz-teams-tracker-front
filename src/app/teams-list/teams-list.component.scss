@@ -14,6 +14,12 @@ color: grey;
 margin-left: -20px;
 }
 
+mat-expansion-panel-body {
+  padding: 2px;
+  margin-left: 10px;
+  // display: flex;
+}
+
 .vbc {
   text-align: right;
 }
@@ -22,14 +28,17 @@ button {
   margin-left: 2.5%;
 }
 
-img {
-  width: 30px;
+.member-pic {
+  height: 5.5vh;
 }
 
 .dog {
-  display: inline-block;
-  width: 8%;
-  margin-top: 2.5%;
+  display: flex;
+  justify-content: space-between;
+}
+
+.mat-exspansion-panel-body {
+  padding: 1vw;
 }
 
 #addMember{

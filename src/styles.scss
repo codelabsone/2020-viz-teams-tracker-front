@@ -18,3 +18,7 @@ body { margin: 0; font-family: Roboto, "Helvetica Neue", sans-serif; }
   background-color: lightgray;
   box-shadow: inset 0 0 10px rgba(0,0,0,0.25);
 }
+
+.mat-expansion-panel-body {
+  padding: 1vw !important;
+}

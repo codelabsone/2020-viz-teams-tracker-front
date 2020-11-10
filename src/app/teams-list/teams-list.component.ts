@@ -4,6 +4,8 @@ import { Component, OnInit } from '@angular/core';
 import { MatExpansionModule } from '@angular/material/expansion';
 import { Team } from '../model/team';
 import { Member } from '../model/member';
+import { TEAM } from '../mock-data/teams';
+import { MEMBERS } from 'src/app/mock-data/members'
 
 @Component({
   selector: 'app-teams-list',
@@ -11,13 +13,7 @@ import { Member } from '../model/member';
   styleUrls: ['./teams-list.component.scss']
 })
 export class TeamsListComponent implements OnInit {
-  public teams:Team[] = [
-    new Team('Apples', ''),
-    new Team('Grape', ''),
-    new Team('Carrot', ''),
-    new Team('Orange', ''),
-    new Team('Banananana', ''),
-  ]
+  public teams:Team[] = TEAM
 
   public pics:string[] = ['https://i.guim.co.uk/img/media/684c9d087dab923db1ce4057903f03293b07deac/205_132_1915_1150/master/1915.jpg?width=1200&height=1200&quality=85&auto=format&fit=crop&s=14a95b5026c1567b823629ba35c40aa0',
                 'https://www.nationalgeographic.com/content/dam/animals/thumbs/rights-exempt/mammals/d/domestic-dog_thumb.jpg',
@@ -38,4 +34,7 @@ export class TeamsListComponent implements OnInit {
   ngOnInit(): void {
   }
 
+  // setDefaultPic() {
+  //   this.teams.members.image = '/assets/images/batman-vs-godzilla.png'
+  // }
 }
