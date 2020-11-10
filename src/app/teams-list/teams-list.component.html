@@ -11,8 +11,13 @@
         {{ team.description }}
       </mat-panel-description>
     </mat-expansion-panel-header>
-    <div class="dog">
-        <img *ngFor="let member of team.members"
+    <mat-action-row>
+      <button mat-button (click)="openDialog()">
+        <mat-icon id="addMember">person_add</mat-icon>
+      </button>
+    </mat-action-row>
+    <div class="dog" *ngFor="let pic of pics">
+      <img *ngFor="let member of team.members"
         class="member-pic"
         src= "https://trello-attachments.s3.amazonaws.com/5f96cdcf742fd017660cfbad/5f96d1139638e35950daee78/x/05f14b5c78b771ed563b934c5d19bf68/avatar.png"
         alt=""
@@ -20,7 +25,6 @@
         matTooltipPosition="above"
         aria-label="Button that displays a tooltip when focused or hovered over">
     </div>
-    <mat-action-row><mat-icon id="addMember">person_add</mat-icon></mat-action-row>
   </mat-expansion-panel>
   <mat-card-content></mat-card-content>
 
