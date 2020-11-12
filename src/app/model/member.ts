@@ -10,7 +10,7 @@ export class Member {
       first_name = '',
       last_name = '',
       team_name = '',
-      image = '',
+      image = 'https://www.mudbay.com/wp-content/uploads/2019/09/Advice-DogWeight-Chubby.jpg',
       title = '',
       ...rest
   }) {

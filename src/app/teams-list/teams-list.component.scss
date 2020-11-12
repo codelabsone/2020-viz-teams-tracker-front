@@ -14,6 +14,70 @@ color: grey;
 margin-left: -20px;
 }
 
+mat-expansion-panel-body {
+  padding: 2px;
+  margin-left: 10px;
+}
+
+button {
+  margin-left: 2.5%;
+}
+
+.member-pic {
+  height: 5.5vh;
+}
+
+.team-member-container {
+  display: flex;
+  justify-content: space-between;
+}
+
+.mat-exspansion-panel-body {
+  padding: 1vw;
+}
+
+#addMember{
+  color:  rgba(69, 90, 100, .87);
+  cursor: pointer;
+}
+
+#add_box {
+  color:  rgba(69, 90, 100, .87);
+}
+
+.team-list-container {
+  display: flex;
+  flex-direction: column;
+}
+
+.team-list-card-container {
+  display: flex;
+  height: 100%;
+  flex-direction: column;
+}
+
+.team-list-card-content {
+  height: 100%;
+  overflow-y: auto;
+}
+
+.team-list-card-actions {
+  border-top: solid 1px lightgray;
+  height: 20px;
+  display: flex;
+  justify-content: flex-end;
+}
+
+.team-list-action-buttons {
+  margin: 0 16px;
+}
+
+
+
+
+// .thing{
+
+// }
 
 
 
