@@ -3,8 +3,8 @@
 
   <mat-divider></mat-divider>
   <mat-expansion-panel *ngFor="let team of teams">
-    <mat-expansion-panel-header>
-      <mat-panel-title>
+    <mat-expansion-panel-header >
+      <mat-panel-title (click)="selectTeam(team)">
         {{ team.name }}
       </mat-panel-title>
       <mat-panel-description>

@@ -5,7 +5,7 @@ export const MEMBERS: Member[] = [
     "id": 1,
     "first_name": "John",
     "last_name": "Smith",
-    "team_name": "HoneyBadgers",
+    "team_name": "Apples",
     "image": "null",
     "title": "Designer"
   },
@@ -13,7 +13,7 @@ export const MEMBERS: Member[] = [
     "id": 2,
     "first_name": "James",
     "last_name": "Bond",
-    "team_name": "HoneyBadgers",
+    "team_name": "Apples",
     "image": "null",
     "title": "Secretary"
   },
@@ -21,7 +21,7 @@ export const MEMBERS: Member[] = [
     "id": 3,
     "first_name": "Jillian",
     "last_name": "Kingsley",
-    "team_name": "Cobras",
+    "team_name": "Apples",
     "image": "null",
     "title": "Head Designer"
   },
@@ -29,7 +29,7 @@ export const MEMBERS: Member[] = [
     "id": 4,
     "first_name": "Jerry",
     "last_name": "Potter",
-    "team_name": "Cobras",
+    "team_name": "Grape",
     "image": "null",
     "title": "Wizard"
   },
@@ -37,7 +37,7 @@ export const MEMBERS: Member[] = [
     "id": 5,
     "first_name": "Jerry",
     "last_name": "Potter",
-    "team_name": "Cobras",
+    "team_name": "Grape",
     "image": "null",
     "title": "Wizard"
   }

@@ -4,6 +4,7 @@ import { Component, OnInit } from '@angular/core';
 import { MatExpansionModule } from '@angular/material/expansion';
 import { Team } from '../model/team';
 import { Member } from '../model/member';
+import { TeamService } from '../services/team.service';
 
 @Component({
   selector: 'app-teams-list',
@@ -11,18 +12,17 @@ import { Member } from '../model/member';
   styleUrls: ['./teams-list.component.scss']
 })
 export class TeamsListComponent implements OnInit {
-  public teams:Team[] = [
-    new Team('Apples', ''),
-    new Team('Grape', ''),
-    new Team('Carrot', ''),
-    new Team('Orange', ''),
-    new Team('Banananana', ''),
-  ]
+  public teams:Team[];
 
 
-  constructor() { }
+  constructor(private teamService: TeamService) { }
 
   ngOnInit(): void {
+    this.teams = this.teamService.teams;
+  }
+
+  selectTeam(team: Team) {
+    this.teamService.selectTeam(team);
   }
 
 }
