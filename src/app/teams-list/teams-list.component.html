@@ -14,7 +14,7 @@
       </mat-panel-description>
     </mat-expansion-panel-header>
     <mat-action-row>
-        <mat-icon id="addMember" (click)="openDialog()">person_add</mat-icon>
+        <mat-icon id="addMember" (click)="openDialog(team)">person_add</mat-icon>
     </mat-action-row>
     <div class="team-member-container">
       <img *ngFor="let member of team.members"

@@ -12,12 +12,19 @@ import { TeamsListComponent } from './teams-list/teams-list.component';
 import { TeamContainerComponent } from './team-container/team-container.component';
 import { MatTooltipModule } from '@angular/material/tooltip';
 import { HttpClientModule } from '@angular/common/http';
+import { MatInputModule } from '@angular/material/input';
+import { MatFormFieldModule } from '@angular/material/form-field';
+import { FormsModule } from '@angular/forms';
+import { MatSelectModule } from '@angular/material/select';
+import { AddmembermodalComponent } from './addmembermodal/addmembermodal.component';
+
 
 @NgModule({
   declarations: [
     AppComponent,
     TeamsListComponent,
-    TeamContainerComponent
+    TeamContainerComponent,
+    AddmembermodalComponent
   ],
   imports: [
     BrowserModule,
@@ -29,7 +36,11 @@ import { HttpClientModule } from '@angular/common/http';
     MatExpansionModule,
     MatTooltipModule,
     MatIconModule,
-    MatDialogModule
+    MatDialogModule,
+    MatInputModule,
+    MatFormFieldModule,
+    FormsModule,
+    MatSelectModule
   ],
   providers: [],
   bootstrap: [AppComponent]

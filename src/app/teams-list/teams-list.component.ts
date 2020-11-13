@@ -7,6 +7,7 @@ import { Member } from '../model/member';
 import { TEAM } from '../mock-data/teams';
 import { MEMBERS } from 'src/app/mock-data/members'
 import { MatDialog } from '@angular/material/dialog';
+import { AddmembermodalComponent} from '../addmembermodal/addmembermodal.component'
 
 @Component({
   selector: 'app-teams-list',
@@ -24,8 +25,14 @@ export class TeamsListComponent implements OnInit {
   ngOnInit(): void {
   }
 
-  openDialog() {
-    const dialogRef = this.dialog.open(Modal);
+  openDialog(team: Team) {
+    const dialogRef = this.dialog.open(AddmembermodalComponent, {
+      data: {
+        team,
+        allTeams: this.teams
+      }
+    }
+      );
 
     dialogRef.afterClosed().subscribe(result => {
       console.log(`Dialog result: ${result}`);
@@ -34,8 +41,9 @@ export class TeamsListComponent implements OnInit {
 
 }
 
-@Component({
-  selector: 'modal',
-  templateUrl: 'modal.html',
-})
-export class Modal {}
+// @Component({
+//   selector: 'addmembermodal',
+//   templateUrl: 'addmembermodal.html',
+//   styleUrls: ['./addmembermodal.scss']
+// })
+// export class Modal {}

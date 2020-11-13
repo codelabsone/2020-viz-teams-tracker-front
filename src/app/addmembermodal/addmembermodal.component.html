@@ -1,0 +1,29 @@
+<form class="example-form">
+  <div class="input-hold">
+    <div class="">
+      <mat-form-field class="example-full-width">
+        <!-- <mat-label>First Name</mat-label> -->
+        <input matInput placeholder="First Name">
+      </mat-form-field>
+      <mat-form-field class="example-full-width">
+        <mat-select placeholder="Title">
+          <mat-option value="option1">Software Engineer</mat-option>
+          <mat-option value="option2">Quality Engineer</mat-option>
+          <mat-option value="option3">Team Anchor</mat-option>
+        </mat-select>
+      </mat-form-field>
+    </div>
+    <div class="">
+      <mat-form-field class="example-full-width space">
+        <input matInput placeholder="Last Name">
+      </mat-form-field>
+      <mat-form-field class="example-full-width space">
+        <mat-select placeholder="{{data.team.name}}">
+          <mat-option value="" *ngFor="let team of data.allTeams">{{team.name}}</mat-option>
+        </mat-select>
+      </mat-form-field>
+    </div>
+  </div>
+  <button mat-button style="margin-left: 2%;">Submit</button>
+  <button mat-button>Cancel</button>
+</form>
