@@ -3,7 +3,7 @@
 @import "./src/variables.scss";
 
 
-html, body { height: 100%; }
+html, body { height: 100%; overflow-y: hidden; }
 body { margin: 0; font-family: Roboto, "Helvetica Neue", sans-serif; color: $viz-grey }
 
 .mat-toolbar.mat-primary {
