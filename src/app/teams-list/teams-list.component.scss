@@ -71,14 +71,17 @@ button {
 
 .team-list-action-buttons {
   margin: 0 16px;
+  cursor: pointer;
+}
+
+mat-card-actions {
+  margin-left: 0;
+  margin-right: 0;
+  padding: 8px 0;
 }
 
 
 
-
-// .thing{
-
-// }
 
 
 
