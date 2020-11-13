@@ -12,12 +12,13 @@ import { TeamsListComponent } from './teams-list/teams-list.component';
 import { TeamContainerComponent } from './team-container/team-container.component';
 import { MatTooltipModule } from '@angular/material/tooltip';
 import { HttpClientModule } from '@angular/common/http';
+import { DragDropModule } from '@angular/cdk/drag-drop'; //maybe
 
 @NgModule({
   declarations: [
     AppComponent,
     TeamsListComponent,
-    TeamContainerComponent
+    TeamContainerComponent,
   ],
   imports: [
     BrowserModule,
@@ -29,7 +30,8 @@ import { HttpClientModule } from '@angular/common/http';
     MatExpansionModule,
     MatTooltipModule,
     MatIconModule,
-    MatDialogModule
+    MatDialogModule,
+    DragDropModule //maybe
   ],
   providers: [],
   bootstrap: [AppComponent]
