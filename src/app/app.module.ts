@@ -18,6 +18,7 @@ import { FormsModule } from '@angular/forms';
 import { MatSelectModule } from '@angular/material/select';
 import { AddmembermodalComponent } from './addmembermodal/addmembermodal.component';
 
+import { DragDropModule } from '@angular/cdk/drag-drop'; //maybe
 
 @NgModule({
   declarations: [
@@ -40,7 +41,8 @@ import { AddmembermodalComponent } from './addmembermodal/addmembermodal.compone
     MatInputModule,
     MatFormFieldModule,
     FormsModule,
-    MatSelectModule
+    MatSelectModule,
+    DragDropModule //maybe
   ],
   providers: [],
   bootstrap: [AppComponent]
