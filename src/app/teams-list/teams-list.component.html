@@ -16,15 +16,17 @@
     <mat-action-row>
         <mat-icon id="addMember" (click)="openDialog(team)">person_add</mat-icon>
     </mat-action-row>
-    <div class="team-member-container">
-        <img *ngFor="let member of team.members"
-          cdkDrag
-          class="member-pic"
-          src= "https://trello-attachments.s3.amazonaws.com/5f96cdcf742fd017660cfbad/5f96d1139638e35950daee78/x/05f14b5c78b771ed563b934c5d19bf68/avatar.png"
-          alt=""
-          matTooltip="{{member.first_name}} {{member.last_name}}"
-          matTooltipPosition="above"
-          aria-label="Button that displays a tooltip when focused or hovered over">
+      <!-- <div class="team-member-container"> -->
+        <div cdkDropList class="drag-photo-list team-member-container" [cdkDropListData]="team.members" (cdkDropListDropped)="drop($event)">
+            <img *ngFor="let member of team.members"
+              cdkDrag
+              class="member-pic"
+              src= "https://trello-attachments.s3.amazonaws.com/5f96cdcf742fd017660cfbad/5f96d1139638e35950daee78/x/05f14b5c78b771ed563b934c5d19bf68/avatar.png"
+              alt=""
+              matTooltip="{{member.first_name}} {{member.last_name}}"
+              matTooltipPosition="above"
+              aria-label="Button that displays a tooltip when focused or hovered over">
+          <!-- </div> -->
     </div>
   </mat-expansion-panel>
   </mat-card-content>
