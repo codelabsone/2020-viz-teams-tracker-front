@@ -3,8 +3,9 @@ import { Team } from '../model/team';
 import { TEAM } from '../mock-data/teams';
 import { MatDialog } from '@angular/material/dialog';
 import { AddmembermodalComponent} from '../addmembermodal/addmembermodal.component'
-import {CdkDragDrop, moveItemInArray} from '@angular/cdk/drag-drop';
+import {CdkDragDrop, moveItemInArray, transferArrayItem} from '@angular/cdk/drag-drop';
 import { AddTeamComponent } from '../add-team/add-team.component'
+import { Member } from '../model/member';
 
 @Component({
   selector: 'app-teams-list',
@@ -40,15 +41,11 @@ export class TeamsListComponent implements OnInit {
     });
   }
 
-  drop(event: CdkDragDrop<string[]>) {
+  drop(event: CdkDragDrop<Member[]>) {
+    console.log('DATA', event.container.data)
+    console.log('PreviousIndex', event.previousIndex)
+    console.log('CurrentIndex', event.currentIndex)
     moveItemInArray(event.container.data, event.previousIndex, event.currentIndex);
   }
 
 }
-
-// @Component({
-//   selector: 'addmembermodal',
-//   templateUrl: 'addmembermodal.html',
-//   styleUrls: ['./addmembermodal.scss']
-// })
-// export class Modal {}
