@@ -5,8 +5,8 @@ export const TEAM: Team[] = [
   "members": [
     {
       "id": 1,
-      "first_name": "John",
-      "last_name": "Smith",
+      "first_name": "Frank",
+      "last_name": "White",
       "team_name": "HoneyBadgers",
       "image": "https://www.mudbay.com/wp-content/uploads/2019/09/Advice-DogWeight-Chubby.jpg",
       "title": "Designer"
@@ -93,8 +93,8 @@ export const TEAM: Team[] = [
     },
     {
       "id": 12,
-      "first_name": "Adam",
-      "last_name": "Weiss",
+      "first_name": "Ron",
+      "last_name": "Yollo",
       "team_name": "Cobras",
       "image": "null",
       "title": "Wizard"

@@ -1,7 +1,10 @@
 import { Component, OnInit } from '@angular/core';
 import { MemberService } from '.././services/member.service';
 import { MEMBERS } from '../mock-data/members';
+import { TEAM } from '../mock-data/teams';
+import { Team } from '../model/team';
 import { Member } from '../models/member';
+import { StateService } from '../services/state.service';
 
 
 @Component({
@@ -10,17 +13,14 @@ import { Member } from '../models/member';
   styleUrls: ['./team-container.component.scss']
 })
 export class TeamContainerComponent implements OnInit {
-
-  members = MEMBERS
+  public team:Team;
   constructor(
-    private memberService: MemberService
+    private memberService: MemberService,
+    private stateService: StateService
   ) { }
-
-  ngOnInit(): void {
-  }
-
-  showMembers(){
-
-  }
-
+    ngOnInit() {
+      this.stateService.selectedTeam.subscribe(x => {
+        this.team = x;
+      })
+    }
 }
