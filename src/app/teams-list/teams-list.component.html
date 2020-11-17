@@ -19,7 +19,7 @@
       <!-- <div class="team-member-container"> -->
         <div cdkDropList class="drag-photo-list team-member-container"
          [cdkDropListData]="team.members"
-          (cdkDropListDropped)="drop($event)"
+          (cdkDropListDropped)="drop($event, team.id, team.name)"
           cdkDropListOrientation="horizontal">
             <img *ngFor="let member of team.members"
               cdkDrag

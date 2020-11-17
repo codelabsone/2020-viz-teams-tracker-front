@@ -2,6 +2,7 @@ import { Team } from '../model/team'
 
 export const TEAM: Team[] = [
   {"name": "Apple",
+  "id": 1,
   "members": [
     {
       "id": 1,
@@ -9,7 +10,8 @@ export const TEAM: Team[] = [
       "last_name": "White",
       "team_name": "HoneyBadgers",
       "image": "https://www.mudbay.com/wp-content/uploads/2019/09/Advice-DogWeight-Chubby.jpg",
-      "title": "Designer"
+      "title": "Designer",
+      "team_Id": 1
     },
     {
       "id": 2,
@@ -17,7 +19,8 @@ export const TEAM: Team[] = [
       "last_name": "Bond",
       "team_name": "HoneyBadgers",
       "image": "null",
-      "title": "Secretary"
+      "title": "Secretary",
+      "team_Id": 1
     },
     {
       "id": 3,
@@ -25,7 +28,8 @@ export const TEAM: Team[] = [
       "last_name": "Kingsley",
       "team_name": "Cobras",
       "image": "null",
-      "title": "Head Designer"
+      "title": "Head Designer",
+      "team_Id": 1
     },
     {
       "id": 4,
@@ -33,7 +37,8 @@ export const TEAM: Team[] = [
       "last_name": "Potter",
       "team_name": "Cobras",
       "image": "null",
-      "title": "Wizard"
+      "title": "Wizard",
+      "team_Id": 1
     },
     {
       "id": 5,
@@ -41,7 +46,8 @@ export const TEAM: Team[] = [
       "last_name": "Potter",
       "team_name": "Cobras",
       "image": "null",
-      "title": "Wizard"
+      "title": "Wizard",
+      "team_Id": 1
     },
     {
       "id": 6,
@@ -49,7 +55,8 @@ export const TEAM: Team[] = [
       "last_name": "Banner",
       "team_name": "Cobras",
       "image": "null",
-      "title": "Wizard"
+      "title": "Wizard",
+      "team_Id": 1
     },
     {
       "id": 7,
@@ -57,7 +64,8 @@ export const TEAM: Team[] = [
       "last_name": "Rocker",
       "team_name": "Cobras",
       "image": "null",
-      "title": "Wizard"
+      "title": "Wizard",
+      "team_Id": 1
     },
     {
       "id": 8,
@@ -65,7 +73,8 @@ export const TEAM: Team[] = [
       "last_name": "Knocks",
       "team_name": "Cobras",
       "image": "null",
-      "title": "Wizard"
+      "title": "Wizard",
+      "team_Id": 1
     },
     {
       "id": 9,
@@ -73,7 +82,8 @@ export const TEAM: Team[] = [
       "last_name": "Stiller",
       "team_name": "Cobras",
       "image": "null",
-      "title": "Wizard"
+      "title": "Wizard",
+      "team_Id": 1
     },
     {
       "id": 10,
@@ -81,7 +91,8 @@ export const TEAM: Team[] = [
       "last_name": "Dude",
       "team_name": "Cobras",
       "image": "null",
-      "title": "Wizard"
+      "title": "Wizard",
+      "team_Id": 1
     },
     {
       "id": 11,
@@ -89,7 +100,8 @@ export const TEAM: Team[] = [
       "last_name": "Scott",
       "team_name": "Cobras",
       "image": "null",
-      "title": "Wizard"
+      "title": "Wizard",
+      "team_Id": 1
     },
     {
       "id": 12,
@@ -97,12 +109,14 @@ export const TEAM: Team[] = [
       "last_name": "Yollo",
       "team_name": "Cobras",
       "image": "null",
-      "title": "Wizard"
+      "title": "Wizard",
+      "team_Id": 1
     }
   ],
 "description": "Cool Stuff"
 },
 {"name": "Grape",
+"id": 2,
   "members": [
     {
       "id": 1,
@@ -110,7 +124,8 @@ export const TEAM: Team[] = [
       "last_name": "Smith",
       "team_name": "HoneyBadgers",
       "image": "null",
-      "title": "Designer"
+      "title": "Designer",
+      "team_Id": 2
     },
     {
       "id": 2,
@@ -118,7 +133,8 @@ export const TEAM: Team[] = [
       "last_name": "Bond",
       "team_name": "HoneyBadgers",
       "image": "null",
-      "title": "Secretary"
+      "title": "Secretary",
+      "team_Id": 2
     },
     {
       "id": 3,
@@ -126,7 +142,8 @@ export const TEAM: Team[] = [
       "last_name": "Kingsley",
       "team_name": "Cobras",
       "image": "null",
-      "title": "Head Designer"
+      "title": "Head Designer",
+      "team_Id": 2
     },
     {
       "id": 4,
@@ -134,7 +151,8 @@ export const TEAM: Team[] = [
       "last_name": "Potter",
       "team_name": "Cobras",
       "image": "null",
-      "title": "Wizard"
+      "title": "Wizard",
+      "team_Id": 2
     },
     {
       "id": 5,
@@ -142,7 +160,8 @@ export const TEAM: Team[] = [
       "last_name": "Potter",
       "team_name": "Cobras",
       "image": "null",
-      "title": "Wizard"
+      "title": "Wizard",
+      "team_Id": 2
     },
     {
       "id": 6,
@@ -150,7 +169,8 @@ export const TEAM: Team[] = [
       "last_name": "Banner",
       "team_name": "Cobras",
       "image": "null",
-      "title": "Wizard"
+      "title": "Wizard",
+      "team_Id": 2
     },
     {
       "id": 7,
@@ -158,7 +178,8 @@ export const TEAM: Team[] = [
       "last_name": "Rocker",
       "team_name": "Cobras",
       "image": "null",
-      "title": "Wizard"
+      "title": "Wizard",
+      "team_Id": 2
     },
     {
       "id": 8,
@@ -166,7 +187,8 @@ export const TEAM: Team[] = [
       "last_name": "Knocks",
       "team_name": "Cobras",
       "image": "null",
-      "title": "Wizard"
+      "title": "Wizard",
+      "team_Id": 2
     },
     {
       "id": 9,
@@ -174,7 +196,8 @@ export const TEAM: Team[] = [
       "last_name": "Stiller",
       "team_name": "Cobras",
       "image": "null",
-      "title": "Wizard"
+      "title": "Wizard",
+      "team_Id": 2
     },
     {
       "id": 10,
@@ -182,7 +205,8 @@ export const TEAM: Team[] = [
       "last_name": "Dude",
       "team_name": "Cobras",
       "image": "null",
-      "title": "Wizard"
+      "title": "Wizard",
+      "team_Id": 2
     },
     {
       "id": 11,
@@ -190,7 +214,8 @@ export const TEAM: Team[] = [
       "last_name": "Scott",
       "team_name": "Cobras",
       "image": "null",
-      "title": "Wizard"
+      "title": "Wizard",
+      "team_Id": 2
     },
     {
       "id": 12,
@@ -198,12 +223,14 @@ export const TEAM: Team[] = [
       "last_name": "Weiss",
       "team_name": "Cobras",
       "image": "null",
-      "title": "Wizard"
+      "title": "Wizard",
+      "team_Id": 2
     },
   ],
 "description": "Cool Stuff"
 },
 {"name": "Cherry",
+"id": 3,
   "members": [],
 "description": "Cool Stuff"
 }
