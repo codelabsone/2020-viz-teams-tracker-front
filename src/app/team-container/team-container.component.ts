@@ -14,6 +14,8 @@ import { StateService } from '../services/state.service';
 })
 export class TeamContainerComponent implements OnInit {
   public team:Team;
+  memberView: boolean = false;
+  selectedMember: Member;
   constructor(
     private memberService: MemberService,
     private stateService: StateService
@@ -22,5 +24,17 @@ export class TeamContainerComponent implements OnInit {
       this.stateService.selectedTeam.subscribe(x => {
         this.team = x;
       })
+    }
+
+    showMemberInfo(member: Member) {
+      this.stateService.selectedMember.next(member);
+      this.stateService.selectedMember.subscribe(x => {
+        this.selectedMember = x;
+      })
+      this.memberView = true;
+    }
+
+    clearMemberInfo() {
+      this.memberView = false;
     }
 }
