@@ -4,6 +4,7 @@ import { TEAM } from '../mock-data/teams';
 import { MatDialog } from '@angular/material/dialog';
 import { AddmembermodalComponent} from '../addmembermodal/addmembermodal.component'
 import {CdkDragDrop, moveItemInArray} from '@angular/cdk/drag-drop';
+import { AddTeamComponent } from '../add-team/add-team.component'
 
 @Component({
   selector: 'app-teams-list',
@@ -19,6 +20,10 @@ export class TeamsListComponent implements OnInit {
 
 
   ngOnInit(): void {
+  }
+
+  openAddTeam(){
+    const dialogRef = this.dialog.open(AddTeamComponent)
   }
 
   openDialog(team: Team) {

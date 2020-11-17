@@ -18,14 +18,16 @@ import { FormsModule } from '@angular/forms';
 import { MatSelectModule } from '@angular/material/select';
 import { AddmembermodalComponent } from './addmembermodal/addmembermodal.component';
 
-import { DragDropModule } from '@angular/cdk/drag-drop'; //maybe
+import { DragDropModule } from '@angular/cdk/drag-drop';
+import { AddTeamComponent } from './add-team/add-team.component'; //maybe
 
 @NgModule({
   declarations: [
     AppComponent,
     TeamsListComponent,
     TeamContainerComponent,
-    AddmembermodalComponent
+    AddmembermodalComponent,
+    AddTeamComponent
   ],
   imports: [
     BrowserModule,
