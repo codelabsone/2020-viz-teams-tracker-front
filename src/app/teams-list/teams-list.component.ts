@@ -3,7 +3,8 @@ import { Team } from '../model/team';
 import { TEAM } from '../mock-data/teams';
 import { MatDialog } from '@angular/material/dialog';
 import { AddmembermodalComponent} from '../addmembermodal/addmembermodal.component'
-import {CdkDragDrop, moveItemInArray, transferArrayItem} from '@angular/cdk/drag-drop';
+import { CdkDragDrop, moveItemInArray} from '@angular/cdk/drag-drop';
+import { StateService } from '../services/state.service';
 import { AddTeamComponent } from '../add-team/add-team.component'
 import { Member } from '../model/member';
 
@@ -16,7 +17,8 @@ export class TeamsListComponent implements OnInit {
   public teams:Team[] = TEAM
 
   constructor(
-    public dialog: MatDialog
+    public dialog: MatDialog,
+    private stateService: StateService,
   ) { }
 
 
@@ -46,6 +48,10 @@ export class TeamsListComponent implements OnInit {
     console.log('PreviousIndex', event.previousIndex)
     console.log('CurrentIndex', event.currentIndex)
     moveItemInArray(event.container.data, event.previousIndex, event.currentIndex);
+  }
+
+  selectedTeam(team:Team) {
+    this.stateService.selectedTeam.next(team);
   }
 
 }

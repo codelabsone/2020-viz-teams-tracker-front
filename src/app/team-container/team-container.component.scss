@@ -7,7 +7,7 @@ mat-card {
 }
 
 mat-card-title {
-  color: $viz-grey;
+  color: '$viz-grey';
 }
 
 .placeholder-text {
@@ -44,5 +44,5 @@ mat-card-title {
 .info {
   padding-top: 10%;
   padding-left: 1%;
-  color: $viz-grey;
+  color: '$viz-grey';
 }
