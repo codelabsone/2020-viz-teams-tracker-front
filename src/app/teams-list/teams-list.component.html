@@ -17,7 +17,10 @@
         <mat-icon id="addMember" (click)="openDialog(team)">person_add</mat-icon>
     </mat-action-row>
       <!-- <div class="team-member-container"> -->
-        <div cdkDropList class="drag-photo-list team-member-container" [cdkDropListData]="team.members" (cdkDropListDropped)="drop($event)">
+        <div cdkDropList class="drag-photo-list team-member-container"
+         [cdkDropListData]="team.members"
+          (cdkDropListDropped)="drop($event)"
+          cdkDropListOrientation="horizontal">
             <img *ngFor="let member of team.members"
               cdkDrag
               class="member-pic"
