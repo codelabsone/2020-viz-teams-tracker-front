@@ -49,4 +49,23 @@ mat-card-title {
 
 .memberInfoContainer{
   display: flex;
+  font-size: 25px;
+  color: grey;
  }
+
+ .memberImageDetail {
+   height: 130px;
+   width: 130px;
+   padding-top: 15px;
+   padding-left: -10px;
+ }
+
+.memberInfo {
+  font-size: 20px;
+  padding-top: 54px;
+  padding-left: 10px;
+}
+
+#click {
+  padding: 5px;
+}
