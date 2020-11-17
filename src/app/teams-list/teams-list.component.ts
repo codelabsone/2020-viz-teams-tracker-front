@@ -23,6 +23,10 @@ export class TeamsListComponent implements OnInit {
   ngOnInit(): void {
   }
 
+  openAddTeam(){
+    const dialogRef = this.dialog.open(AddTeamComponent)
+  }
+
   openDialog(team: Team) {
     const dialogRef = this.dialog.open(AddmembermodalComponent, {
       data: {
