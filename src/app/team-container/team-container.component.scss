@@ -46,3 +46,30 @@ mat-card-title {
   padding-left: 1%;
   color: '$viz-grey';
 }
+
+.memberInfoContainer{
+  display: flex;
+  font-size: 25px;
+  color: grey;
+ }
+
+ .memberImageDetail {
+   height: 130px;
+   width: 130px;
+   padding-top: 15px;
+   padding-left: -10px;
+ }
+
+.memberInfo {
+  font-size: 20px;
+  padding-top:70px;
+  padding-left: 10px;
+}
+
+.single-member {
+  margin-left: -2%;
+}
+
+#click {
+  padding: 5px;
+}

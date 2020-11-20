@@ -5,7 +5,7 @@ import { MatDialog } from '@angular/material/dialog';
 import { AddmembermodalComponent} from '../addmembermodal/addmembermodal.component'
 import { CdkDragDrop, moveItemInArray, transferArrayItem} from '@angular/cdk/drag-drop';
 import { StateService } from '../services/state.service';
-import { AddTeamComponent } from '../add-team/add-team.component'
+import { AddTeamComponent } from '../add-team/add-team.component';
 import { Member } from '../model/member';
 
 @Component({
@@ -18,7 +18,7 @@ export class TeamsListComponent implements OnInit {
 
   constructor(
     public dialog: MatDialog,
-    private stateService: StateService,
+    private stateService: StateService
   ) { }
 
 
