@@ -17,7 +17,7 @@ import { MatFormFieldModule } from '@angular/material/form-field';
 import { FormsModule } from '@angular/forms';
 import { MatSelectModule } from '@angular/material/select';
 import { AddmembermodalComponent } from './addmembermodal/addmembermodal.component';
-
+import {MatPaginatorModule} from '@angular/material/paginator';
 import { DragDropModule } from '@angular/cdk/drag-drop';
 import { AddTeamComponent } from './add-team/add-team.component'; //maybe
 
@@ -44,7 +44,8 @@ import { AddTeamComponent } from './add-team/add-team.component'; //maybe
     MatFormFieldModule,
     FormsModule,
     MatSelectModule,
-    DragDropModule //maybe
+    DragDropModule,
+    MatPaginatorModule
   ],
   providers: [],
   bootstrap: [AppComponent]
