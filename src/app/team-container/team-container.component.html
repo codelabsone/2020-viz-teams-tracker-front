@@ -20,7 +20,7 @@
   </div>
 
   <div class="team-list" *ngIf="memberView">
-    <div class="member">
+    <div class="single-member">
       <div class="memberInfoContainer">
         <mat-divider></mat-divider>
         <img class="memberImageDetail"
@@ -29,7 +29,8 @@
           {{ this.selectedMember.last_name }}
           <br>
           {{ this.selectedMember.title }}
-          coolemail@gmail.com
+          <br>
+          coolemail@gmail.com <!-- add in dynamic data later -->
         </h4>
       </div>
     </div>
