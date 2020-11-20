@@ -15,7 +15,7 @@
           </mat-panel-description>
         </mat-expansion-panel-header>
         <mat-action-row>
-            <mat-icon id="addMember" (click)="openDialog(team)">person_add</mat-icon>
+            <mat-icon id="addMember" (click)="openDialog(team)" (click)="getPicsum()">person_add</mat-icon>
         </mat-action-row>
             <div cdkDropList class="drag-photo-list team-member-container"
              [cdkDropListData]="team.members"

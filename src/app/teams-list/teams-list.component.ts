@@ -7,6 +7,8 @@ import { CdkDragDrop, moveItemInArray, transferArrayItem} from '@angular/cdk/dra
 import { StateService } from '../services/state.service';
 import { AddTeamComponent } from '../add-team/add-team.component';
 import { Member } from '../model/member';
+import { PicsumRequestService } from '../services/picsum-request.service';
+
 
 @Component({
   selector: 'app-teams-list',
@@ -14,11 +16,13 @@ import { Member } from '../model/member';
   styleUrls: ['./teams-list.component.scss']
 })
 export class TeamsListComponent implements OnInit {
-  public teams:Team[] = TEAM
+  public teams:Team[] = TEAM;
 
   constructor(
     public dialog: MatDialog,
-    private stateService: StateService
+    private stateService: StateService,
+    private picsumService: PicsumRequestService,
+
   ) { }
 
 
@@ -36,6 +40,7 @@ export class TeamsListComponent implements OnInit {
         allTeams: this.teams
       }
     }
+
       );
 
     dialogRef.afterClosed().subscribe(result => {
@@ -64,5 +69,13 @@ export class TeamsListComponent implements OnInit {
   selectedTeam(team:Team) {
     this.stateService.selectedTeam.next(team);
   }
+
+
+  getPicsum() {
+    this.picsumService.picsumCall().subscribe(x => {
+      console.log(x)
+    });
+  }
+
 
 }
