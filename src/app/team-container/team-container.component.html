@@ -1,5 +1,5 @@
 <mat-card>
-<div class="placeholder-text" *ngIf="team.members.length === 0">
+<div class="placeholder-text" *ngIf="!team">
   <mat-card-title >Select a team to view members.</mat-card-title>
 </div>
   <mat-card-title *ngIf="team.members.length >= 1 && !memberView" class="team-name">{{ team.name }}</mat-card-title>
@@ -8,7 +8,7 @@
     >
     <span>{{ this.selectedMember.first_name }} {{this.selectedMember.last_name}}</span></mat-card-title>
 
-  <div class="team-list" *ngIf="!memberView">
+  <div class="team-list overflow" *ngIf="!memberView">
     <div class="member" *ngFor="let member of team.members">
       <div class="memberInfoContainer" (click)="showMemberInfo(member)">
         <img
@@ -35,5 +35,19 @@
       </div>
     </div>
   </div>
+  <mat-divider *ngIf="memberView"></mat-divider>
+  <mat-card-actions class="team-list-card-actions">
+    <span class="team-list-action-buttons">
+      <mat-icon *ngIf="memberView"
+      #tooltip="matTooltip"
+      matTooltip="Add Team"
+      matTooltipPosition="above"
+      matTooltipHideDelay="1000"
+      aria-label="Button that displays a tooltip that hides when scrolled out of the container"
+      class="example-button"
+      id="add_box">add_box</mat-icon>
+    </span>
+</mat-card-actions>
 
 </mat-card>
+

@@ -3,6 +3,9 @@
 mat-card {
   height: 76%;
   width: 45vw;
+}
+
+.overflow {
   overflow-y: scroll;
 }
 
@@ -32,6 +35,7 @@ mat-card-title {
   max-width: 100%;
   flex-wrap: wrap;
   padding-left: 2%;
+  height: 76%;
 }
 
 .member {
@@ -54,22 +58,33 @@ mat-card-title {
  }
 
  .memberImageDetail {
-   height: 130px;
-   width: 130px;
-   padding-top: 15px;
-   padding-left: -10px;
+   width: 28%;
+   height: 28%;
+   padding-top: 4%;
  }
 
 .memberInfo {
   font-size: 20px;
-  padding-top:70px;
-  padding-left: 10px;
+  padding-top: 13%;
+  padding-left: 2%;
 }
 
 .single-member {
   margin-left: -2%;
 }
 
-#click {
-  padding: 5px;
+.team-card-container {
+  display: flex;
+  height: 100%;
+  flex-direction: column;
+}
+
+.team-list-card-actions {
+  height: 7%;
+  display: flex;
+  justify-content: flex-end;
+}
+
+.team-list-action-buttons {
+  cursor: pointer;
 }
