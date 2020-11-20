@@ -40,12 +40,20 @@
     <span class="team-list-action-buttons">
       <mat-icon *ngIf="memberView"
       #tooltip="matTooltip"
-      matTooltip="Add Team"
+      matTooltip="Edit Team"
       matTooltipPosition="above"
       matTooltipHideDelay="1000"
       aria-label="Button that displays a tooltip that hides when scrolled out of the container"
-      class="example-button"
-      id="add_box">add_box</mat-icon>
+      class="pencil-button"
+      id="add_box">edit</mat-icon>
+      <mat-icon *ngIf="memberView"
+      #tooltip="matTooltip"
+      matTooltip="Archive Team"
+      matTooltipPosition="above"
+      matTooltipHideDelay="1000"
+      aria-label="Button that displays a tooltip that hides when scrolled out of the container"
+      class="archive-button"
+      id="add_box">archive</mat-icon>
     </span>
 </mat-card-actions>
 
