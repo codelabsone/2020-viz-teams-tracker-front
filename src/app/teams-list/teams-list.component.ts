@@ -43,11 +43,11 @@ export class TeamsListComponent implements OnInit {
     });
   }
 
-  drop(event: CdkDragDrop<Member[]>, teamId: number, teamName: string) {
+  drop(event: CdkDragDrop<Member[]>, teamId: number) {
+    const memberToUpdate = event.previousContainer.data[event.previousIndex];
+    console.log(memberToUpdate);
 
     if (event.previousContainer === event.container) {
-      console.log("PreviousContainer", event.previousContainer)
-      console.log("CurrentContainer", event.container)
       moveItemInArray(event.container.data, event.previousIndex, event.currentIndex);
     } else {
       console.log("PreviousContainer", event.previousContainer)
@@ -58,16 +58,11 @@ export class TeamsListComponent implements OnInit {
         event.previousIndex,
         event.currentIndex);
     }
-    this.updateMember(event.previousContainer.data[event.previousIndex], teamName, teamId)
+    memberToUpdate.team_Id = teamId;
   }
 
   selectedTeam(team:Team) {
     this.stateService.selectedTeam.next(team);
-  }
-
-  updateMember(member: Member, teamName: string, teamId: number) {
-    let createdMember = new Member(7, member.first_name, member.last_name, teamName, member.image, member.title, teamId)
-    console.log(createdMember)
   }
 
 }
