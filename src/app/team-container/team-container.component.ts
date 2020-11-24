@@ -3,7 +3,7 @@ import { MemberService } from '.././services/member.service';
 import { MEMBERS } from '../mock-data/members';
 import { TEAM } from '../mock-data/teams';
 import { Team } from '../model/team';
-import { Member } from '../models/member';
+import { Member } from '../model/member';
 import { StateService } from '../services/state.service';
 
 

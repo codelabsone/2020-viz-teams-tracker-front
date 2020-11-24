@@ -25,16 +25,18 @@ button {
 
 .member-pic {
   height: 5.5vh;
+  padding-right: 2.5%;
 }
 
 .team-member-container {
   display: flex;
-  justify-content: space-between;
+  // justify-content: flex-start;
   cursor: move;
 }
 
-.mat-exspansion-panel-body {
-  padding: 1vw;
+.mat-expansion-panel-body {
+  justify-content: left;
+  padding: 10px;
 }
 
 #addMember{
@@ -82,7 +84,7 @@ mat-card-actions {
 
 .drag-photo-list {
   padding: 10px;
-  justify-content: space-between;
+  justify-content: flex-start;
 }
 
 
