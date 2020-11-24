@@ -70,12 +70,4 @@ export class TeamsListComponent implements OnInit {
     this.stateService.selectedTeam.next(team);
   }
 
-
-  getPicsum() {
-    this.picsumService.picsumCall().subscribe(x => {
-      console.log(x)
-    });
-  }
-
-
 }
