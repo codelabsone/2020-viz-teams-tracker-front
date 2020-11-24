@@ -2,12 +2,12 @@
 <div class="placeholder-text" *ngIf="!team">
   <mat-card-title >Select a team to view members.</mat-card-title>
 </div>
-  <mat-card-title *ngIf="team.members.length >= 1 && !memberView" class="team-name">{{ team.name }}</mat-card-title>
+  <mat-card-title id="mat-title1" *ngIf="team.members.length >= 1 && !memberView" class="team-name">{{ team.name }}</mat-card-title>
   <mat-card-title id="click" *ngIf="memberView" class="team-name">
     <span (click) = "clearMemberInfo()">{{ team.name }}</span>
     >
     <span>{{ this.selectedMember.first_name }} {{this.selectedMember.last_name}}</span></mat-card-title>
-
+    <mat-divider *ngIf="!memberView"></mat-divider>
   <div class="team-list overflow" *ngIf="!memberView">
     <div class="member" *ngFor="let member of team.members">
       <div class="memberInfoContainer" (click)="showMemberInfo(member)">
@@ -18,14 +18,36 @@
       </div>
     </div>
   </div>
+  <mat-divider class="divide" *ngIf="!memberView"></mat-divider>
+  <mat-card-actions class="team-list-card-actions" id="button_box" *ngIf="!memberView">
+    <span class="team-list-action-buttons">
+      <mat-icon
+      #tooltip="matTooltip"
+      matTooltip="Edit Team"
+      matTooltipPosition="above"
+      matTooltipHideDelay="1000"
+      aria-label="Button that displays a tooltip that hides when scrolled out of the container"
+      class="pencil-button"
+      id="edit">edit</mat-icon>
+      <mat-icon
+      #tooltip="matTooltip"
+      matTooltip="Archive Team"
+      matTooltipPosition="above"
+      matTooltipHideDelay="1000"
+      aria-label="Button that displays a tooltip that hides when scrolled out of the container"
+      class="archive-button"
+      id="archive">archive</mat-icon>
+    </span>
+</mat-card-actions>
+  <!-- <mat-divider class="bottom-divide-multi" *ngIf="!memberView"></mat-divider> -->
 
-  <div class="team-list" *ngIf="memberView">
+  <div class="team-list2" *ngIf="memberView">
     <div class="single-member">
       <div class="memberInfoContainer">
         <mat-divider></mat-divider>
-        <img class="memberImageDetail"
+        <img class="memberImageDetail" id="memberImageDetail_id"
         src="{{this.selectedMember.image}}">
-        <h4 class="memberInfo">{{ this.selectedMember.first_name }}
+        <h4 class="memberInfo" id="memberinfo_id">{{ this.selectedMember.first_name }}
           {{ this.selectedMember.last_name }}
           <br>
           {{ this.selectedMember.title }}
@@ -35,25 +57,25 @@
       </div>
     </div>
   </div>
-  <mat-divider *ngIf="memberView"></mat-divider>
-  <mat-card-actions class="team-list-card-actions">
+  <mat-divider class="divide2" *ngIf="memberView"></mat-divider>
+  <mat-card-actions class="team-list-card-actions2" id="button_box" *ngIf="memberView">
     <span class="team-list-action-buttons">
-      <mat-icon *ngIf="memberView"
+      <mat-icon
       #tooltip="matTooltip"
       matTooltip="Edit Team"
       matTooltipPosition="above"
       matTooltipHideDelay="1000"
       aria-label="Button that displays a tooltip that hides when scrolled out of the container"
       class="pencil-button"
-      id="add_box">edit</mat-icon>
-      <mat-icon *ngIf="memberView"
+      id="edit">edit</mat-icon>
+      <mat-icon
       #tooltip="matTooltip"
       matTooltip="Archive Team"
       matTooltipPosition="above"
       matTooltipHideDelay="1000"
       aria-label="Button that displays a tooltip that hides when scrolled out of the container"
       class="archive-button"
-      id="add_box">archive</mat-icon>
+      id="archive">archive</mat-icon>
     </span>
 </mat-card-actions>
 

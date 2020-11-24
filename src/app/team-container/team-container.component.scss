@@ -5,6 +5,10 @@ mat-card {
   width: 45vw;
 }
 
+mat-card-title {
+  font-size: 4vh;
+}
+
 .overflow {
   overflow-y: scroll;
 }
@@ -23,9 +27,9 @@ mat-card-title {
 
 .team-name {
   color: $viz-grey;
-  padding-top: 2%;
-  padding-left: 2%;
-  padding-bottom: 3%;
+  padding-top: 0;
+  padding-left: 0;
+  padding-bottom: 0;
   width: 100%;
 }
 
@@ -36,6 +40,19 @@ mat-card-title {
   flex-wrap: wrap;
   padding-left: 2%;
   height: 76%;
+  margin-top: 3%;
+  padding-top: 1%;
+}
+
+.team-list2 {
+  display: flex;
+  flex-direction: row;
+  max-width: 100%;
+  flex-wrap: wrap;
+  padding-left: 2%;
+  height: 76%;
+  margin-top: 0;
+  padding-top: 0;
 }
 
 .member {
@@ -58,14 +75,14 @@ mat-card-title {
  }
 
  .memberImageDetail {
-   width: 28%;
-   height: 28%;
-   padding-top: 4%;
+   width: 21%;
+   height: 21%;
+   padding-top: 3%;
  }
 
 .memberInfo {
-  font-size: 20px;
-  padding-top: 13%;
+  font-size: 3.5vh;
+  padding-top: 11%;
   padding-left: 2%;
 }
 
@@ -83,6 +100,22 @@ mat-card-title {
   height: 7%;
   display: flex;
   justify-content: flex-end;
+  margin-top: 2.5%;
+}
+
+.team-list-card-actions2 {
+  height: 7%;
+  display: flex;
+  justify-content: flex-end;
+  margin-top: 5%;
+}
+
+.divide {
+  margin-top: 2.5%;
+}
+
+.divide2 {
+  margin-top: 5%;
 }
 
 .team-list-action-buttons {
@@ -91,6 +124,44 @@ mat-card-title {
   margin-top: 7px;
 }
 
+.archive-button {
+  color:  rgba(69, 90, 100, .87);
+}
+
 .pencil-button {
   margin-right: 40px;
+  color:  rgba(69, 90, 100, .87);
+}
+mat-divider {
+  margin-top: 1%;
+  height: 1px;
+}
+.bottom-divide-multi {
+  margin-top: 3%;
+}
+@media screen and (min-width: 1400px) {
+  #memberinfo_id {
+    padding-top: 12%;
+    font-size: 2.75vh;
+  }
+  #mat-title1 {
+    font-size: 3vh;
+  }
+  #click {
+    font-size: 3vh;
+    padding-bottom: 1%;
+    padding-top: 1%;
+  }
+  #memberImageDetail_id {
+    padding-top: 2%;
+  }
+  mat-card-actions {
+    margin-top: 11%;
+  }
+  .divide {
+    margin-top: 40%;
+  }
+  #button_box{
+    margin-top: 11%;
+  }
 }
