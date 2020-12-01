@@ -1,8 +1,11 @@
 <div class="pic-selector">
-<div class="memberImageOptions" *ngFor="let pic of pictures | slice:0:5">
-  <p>{{ pic.id }}</p>
+<div class="row" *ngFor="let pic of pictures">
+  <div class="column">
+    <img class="pic" src="{{pic.download_url}}">
+  </div>
 </div>
-  <mat-paginator [length]="100" [pageSize]="5" [pageSizeOptions]="[5]">
+  <mat-paginator [length]="100" [pageSize]="5" [pageSizeOptions]="[5]"
+  (page)="pageEvent = $event">
   </mat-paginator>
 </div>
 <form class="example-form">

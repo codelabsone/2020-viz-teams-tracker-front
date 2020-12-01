@@ -7,7 +7,8 @@ import { Observable } from 'rxjs';
 })
 export class PicsumRequestService {
 
-  picUrl = 'https://picsum.photos/v2/list?limit=100'
+  pageNumber: number = 1;
+  picUrl = 'https://picsum.photos/v2/list?page=' + this.pageNumber + '&limit=5'
   constructor(
     public http: HttpClient
   ) { }

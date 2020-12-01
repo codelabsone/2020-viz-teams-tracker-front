@@ -5,6 +5,7 @@ import { Team } from '../model/team';
 import { TeamsListComponent } from '../teams-list/teams-list.component';
 import { PicsumRequestService } from '../services/picsum-request.service';
 import { StateService } from '../services/state.service';
+import { PageEvent } from '@angular/material/paginator';
 
 @Component({
   selector: 'app-addmembermodal',
@@ -26,20 +27,14 @@ export class AddmembermodalComponent implements OnInit {
       })
   }
 
-  // selectedTeam(team:Team) {
-  //   this.stateService.selectedTeam.next(team);
-  // }
+  length = 100;
+  pageSize = 10;
+  pageEvent: PageEvent;
+  pageSizeOptions: number[] = [5, 10, 25, 100];
 
-  //^ needs to be fixed
-
-  // getPicsum() {
-  //   this.picsumService.picsumCall().subscribe(x => {console.log});
-  // }
-
-  // getPicsum() {
-  //   this.picsumService.picsumCall().subscribe(x => {
-  //     this.pictures = x
-  //   });
-  // }
-
+  setPageSizeOptions(setPageSizeOptionsInput: string) {
+    if (setPageSizeOptionsInput) {
+      this.pageSizeOptions = setPageSizeOptionsInput.split(',').map(str => +str);
+    }
+  }
 }

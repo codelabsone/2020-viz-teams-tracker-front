@@ -4,11 +4,6 @@
   width: 100%;
 }
 
-.memberImageOptions {
-  display: flex;
-  flex-direction: row;
-}
-
 .example-full-width {
   width: 100%;
 }
@@ -41,4 +36,20 @@ button:focus {
 
 .pic-selector{
   border: solid;
+  display: flex;
+  flex-direction: row;
+}
+
+// .row {
+//   display: flex;
+// }
+
+// .column {
+//   flex: 15%;
+//   padding: 5px;
+// }
+
+.pic {
+  width: 80px;
+  float: inline-block;
 }
