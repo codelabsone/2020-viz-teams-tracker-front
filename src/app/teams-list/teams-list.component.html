@@ -30,6 +30,9 @@
                   matTooltipPosition="above"
                   aria-label="Button that displays a tooltip when focused or hovered over">
           </div>
+          <div class="noMembers" *ngIf="!team.members">
+            No members on this team
+          </div>
       </mat-expansion-panel>
     </mat-accordion>
   </mat-card-content>
