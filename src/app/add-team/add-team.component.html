@@ -1,10 +1,10 @@
-<form class="whole">
+<form class="whole" [formGroup]="garbage">
   <div class="container">
-    <mat-form-field id="newTeamName">
-      <input  matInput placeholder="Team Name">
+    <mat-form-field>
+      <input id="newTeamName" matInput placeholder="Team Name" formControlName="name">
     </mat-form-field>
-    <mat-form-field id="newTeamDescription">
-      <input  matInput placeholder="Team Description">
+    <mat-form-field>
+      <input id="newTeamDescription" matInput placeholder="Team Description" formControlName="description">
     </mat-form-field>
   </div>
   <button mat-button (click)="addNewTeam()" style="margin-left: 2%;">Submit</button>

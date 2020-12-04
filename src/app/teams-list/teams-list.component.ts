@@ -8,6 +8,7 @@ import { StateService } from '../services/state.service';
 import { AddTeamComponent } from '../add-team/add-team.component';
 import { Member } from '../model/member';
 import { PicsumRequestService } from '../services/picsum-request.service';
+import { TeamService } from '../services/team.service'
 
 
 @Component({
@@ -15,22 +16,33 @@ import { PicsumRequestService } from '../services/picsum-request.service';
   templateUrl: './teams-list.component.html',
   styleUrls: ['./teams-list.component.scss']
 })
-export class TeamsListComponent implements OnInit {
+export class TeamsListComponent implements OnInit{
   public teams:Team[] = TEAM;
 
   constructor(
     public dialog: MatDialog,
     private stateService: StateService,
     private picsumService: PicsumRequestService,
+    private teamService: TeamService,
 
   ) { }
 
+  teaminfo: Team[];
 
   ngOnInit(): void {
+    this.getAllTeams();
   }
+
+
 
   openAddTeam(){
     const dialogRef = this.dialog.open(AddTeamComponent)
+
+    dialogRef.afterClosed().subscribe(result => {
+      console.log(`Dialog result: ${result}`);
+      this.teaminfo.push(result)
+      // this.getAllTeams();
+    });
   }
 
   openDialog(team: Team) {
@@ -43,9 +55,12 @@ export class TeamsListComponent implements OnInit {
 
       );
 
-    dialogRef.afterClosed().subscribe(result => {
-      console.log(`Dialog result: ${result}`);
-    });
+
+  }
+
+  getAllTeams() {
+    this.teamService.getTeamData().subscribe(x => {this.teaminfo = x})
+    console.log("Hello");
   }
 
   drop(event: CdkDragDrop<Member[]>, teamId: number) {

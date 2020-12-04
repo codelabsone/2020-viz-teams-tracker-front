@@ -1,5 +1,6 @@
 import { HttpClient } from '@angular/common/http';
 import { Injectable } from '@angular/core';
+import { Observable } from 'rxjs';
 import { Team } from '../model/team';
 
 @Injectable({
@@ -10,6 +11,12 @@ export class TeamService {
   constructor(private http: HttpClient) { }
 
   addTeam(team: Team) {
-    return this.http.post("http://localhost:3000/teams", team)
+    return this.http.post("https://loea-back-test.herokuapp.com/teams", team)
   }
+
+  getTeamData(): Observable<Team[]> {
+    return this.http.get<Team[]>("https://loea-back-test.herokuapp.com/teams")
+  }
+
+
 }

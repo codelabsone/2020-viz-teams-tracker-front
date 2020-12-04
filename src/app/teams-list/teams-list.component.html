@@ -5,7 +5,7 @@
   </mat-card-header>
   <mat-card-content class="team-list-card-content">
     <mat-accordion cdkDropListGroup multi="true">
-      <mat-expansion-panel *ngFor="let team of teams">
+      <mat-expansion-panel *ngFor="let team of teaminfo">
         <mat-expansion-panel-header (click)="selectedTeam(team)">
           <mat-panel-title>
             {{ team.name }}
