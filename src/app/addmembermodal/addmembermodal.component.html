@@ -1,13 +1,14 @@
 <div class="pic-selector">
 <div class="row" *ngFor="let pic of pictures">
-  <div class="column">
-    <img class="pic" src="{{pic.download_url}}">
-  </div>
+  <!-- <div class="column"> -->
+    <img [ngClass]="{'select' : pic === selectedPicture, 'notSelect' : selected === false}" (click)="onSelected(pic)" src="{{pic.download_url}}">
+  <!-- </div> -->
 </div>
-  <mat-paginator [length]="100" [pageSize]="5" [pageSizeOptions]="[5]"
-  (page)="pageEvent = $event">
-  </mat-paginator>
+<br>
 </div>
+<mat-paginator [length]="100" [pageSize]="5" [pageSizeOptions]="[5]"
+(page)="changePage($event)">
+</mat-paginator>
 <form class="example-form">
   <div class="input-hold">
     <div class="">

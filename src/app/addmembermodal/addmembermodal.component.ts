@@ -1,4 +1,4 @@
-import { Component, Inject, OnInit } from '@angular/core';
+import { Component, EventEmitter, Inject, OnInit, Output } from '@angular/core';
 import { MAT_DIALOG_DATA } from '@angular/material/dialog';
 import { TEAM } from '../mock-data/teams';
 import { Team } from '../model/team';
@@ -13,15 +13,18 @@ import { PageEvent } from '@angular/material/paginator';
   styleUrls: ['./addmembermodal.component.scss']
 })
 export class AddmembermodalComponent implements OnInit {
-  public teams:Team[] = TEAM
+  public teams:Team[] = TEAM;
+  selected = false;
+  // clicked = false;
 
   constructor(@Inject(MAT_DIALOG_DATA) public data: any,
           private picsumService: PicsumRequestService) { }
 
-  pictures: Object;
+  pictures: any[];
+  selectedPicture: any;
   ngOnInit(): void {
     // this.picsumService.picsumCall().subscribe(x => {console.log});
-    this.picsumService.picsumCall().subscribe(
+    this.picsumService.picsumCall(1).subscribe(
       data => {this.pictures = data;
       console.log(this.pictures)
       })
@@ -36,5 +39,23 @@ export class AddmembermodalComponent implements OnInit {
     if (setPageSizeOptionsInput) {
       this.pageSizeOptions = setPageSizeOptionsInput.split(',').map(str => +str);
     }
+  }
+
+  // nextPage() {
+  //   this.picsumService.pageNumber = this.picsumService.pageNumber + 1;
+  //   this.picsumService.picsumCall().subscribe(
+  //     data => {this.pictures = data;
+  //   })
+  // }
+
+  changePage(event: PageEvent) {
+    this.picsumService.picsumCall(event.pageIndex + 1).subscribe(
+      data => this.pictures = data
+    )
+    console.log(event.pageIndex)
+  }
+
+  onSelected(image: any) {
+    this.selectedPicture = image;
   }
 }

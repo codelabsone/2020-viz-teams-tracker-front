@@ -35,21 +35,51 @@ button:focus {
 }
 
 .pic-selector{
+  display: flex;
+  flex-direction: row;
   border: solid;
+  border-color: white;
+  width: 100%;
+}
+
+// .column {
+//   width: 20%;
+// }
+
+.row {
   display: flex;
   flex-direction: row;
 }
 
-// .row {
-//   display: flex;
-// }
-
-// .column {
-//   flex: 15%;
-//   padding: 5px;
-// }
-
 .pic {
-  width: 80px;
-  float: inline-block;
+  // display: flex;
+  // flex-direction: row;
+  width: 130px;
+  height: 90px;
+  padding: 5%;
+  // float: inline-block;
+}
+
+.select {
+  width: 130px;
+  padding-left: 3.5%;
+  padding-right: 3.5%;
+  height: 90px;
+  border-bottom: #ff4e00 4px solid;
+  opacity: 0%;
+}
+
+.notSelect {
+  width: 130px;
+  height: 90px;
+  padding-left: 3.5%;
+  padding-right: 3.5%;
+  opacity: 20%;
+}
+
+.untouched {
+  width: 130px;
+  height: 90px;
+  padding-left: 3.5%;
+  padding-right: 3.5%;
 }
