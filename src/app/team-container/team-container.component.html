@@ -47,25 +47,46 @@
 <mat-divider></mat-divider>
 <!-- Footer -->
 <div class="footer">
-  <mat-card-actions class="team-list-card-actions" id="button_box">
+  <mat-card-actions class="team-list-card-actions" id="button_box" *ngIf="memberView">
     <span class="team-list-action-buttons">
       <mat-icon
       #tooltip="matTooltip"
-      matTooltip="Edit Team"
+      [matTooltip]="'Edit ' + getSelectedMemberName()"
       matTooltipPosition="above"
-      matTooltipHideDelay="1000"
+      matTooltipHideDelay="0"
       aria-label="Button that displays a tooltip that hides when scrolled out of the container"
       class="pencil-button"
       id="edit">edit</mat-icon>
       <mat-icon
       #tooltip="matTooltip"
-      matTooltip="Archive Team"
+      [matTooltip]="'Archive ' + getSelectedMemberName()"
       matTooltipPosition="above"
-      matTooltipHideDelay="1000"
+      matTooltipHideDelay="0"
       aria-label="Button that displays a tooltip that hides when scrolled out of the container"
       class="archive-button"
       id="archive">archive</mat-icon>
     </span>
+</mat-card-actions>
+
+<mat-card-actions class="team-list-card-actions" id="button_box" *ngIf="!memberView">
+  <span class="team-list-action-buttons">
+    <mat-icon
+    #tooltip="matTooltip"
+    [matTooltip]="'Edit ' + getSelectedTeamName()"
+    matTooltipPosition="above"
+    matTooltipHideDelay="0"
+    aria-label="Button that displays a tooltip that hides when scrolled out of the container"
+    class="pencil-button"
+    id="edit">edit</mat-icon>
+    <mat-icon
+    #tooltip="matTooltip"
+    [matTooltip]="'Archive ' + getSelectedTeamName()"
+    matTooltipPosition="above"
+    matTooltipHideDelay="0"
+    aria-label="Button that displays a tooltip that hides when scrolled out of the container"
+    class="archive-button"
+    id="archive">archive</mat-icon>
+  </span>
 </mat-card-actions>
 </div>
 </div>

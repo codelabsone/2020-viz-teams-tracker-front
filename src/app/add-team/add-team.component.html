@@ -1,12 +1,12 @@
 <form class="whole">
   <div class="container">
-    <mat-form-field>
-      <input matInput placeholder="Team Name">
+    <mat-form-field id="newTeamName">
+      <input  matInput placeholder="Team Name">
     </mat-form-field>
-    <mat-form-field>
-      <input matInput placeholder="Team Description">
+    <mat-form-field id="newTeamDescription">
+      <input  matInput placeholder="Team Description">
     </mat-form-field>
   </div>
-  <button mat-button style="margin-left: 2%;">Submit</button>
+  <button mat-button (click)="addNewTeam()" style="margin-left: 2%;">Submit</button>
   <button mat-button mat-dialog-close>Cancel</button>
 </form>
