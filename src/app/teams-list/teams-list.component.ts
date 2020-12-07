@@ -40,8 +40,9 @@ export class TeamsListComponent implements OnInit{
 
     dialogRef.afterClosed().subscribe(result => {
       console.log(`Dialog result: ${result}`);
-      this.teaminfo.push(result)
-      // this.getAllTeams();
+      if(result) {
+        this.teaminfo.push(result)
+      }
     });
   }
 
@@ -52,10 +53,7 @@ export class TeamsListComponent implements OnInit{
         allTeams: this.teams
       }
     }
-
       );
-
-
   }
 
   getAllTeams() {
