@@ -57,5 +57,6 @@ export class AddmembermodalComponent implements OnInit {
 
   onSelected(image: any) {
     this.selectedPicture = image;
+
   }
 }
