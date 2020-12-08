@@ -28,6 +28,7 @@ export class TeamsListComponent implements OnInit{
   ) { }
 
   teaminfo: Team[];
+  identifier: Number = null;
 
   ngOnInit(): void {
     this.getAllTeams();
@@ -67,7 +68,8 @@ export class TeamsListComponent implements OnInit{
 
     if (event.previousContainer === event.container) {
       moveItemInArray(event.container.data, event.previousIndex, event.currentIndex);
-    } else {
+    }
+    else {
       console.log("PreviousContainer", event.previousContainer)
       console.log("CurrentContainer", event.container)
       transferArrayItem(
@@ -79,10 +81,15 @@ export class TeamsListComponent implements OnInit{
     memberToUpdate.team_Id = teamId;
   }
 
-  selectedTeam(team:Team) {
+  selectedTeam(team:Team, id:Number) {
     this.stateService.selectedTeam.next(team);
+    this.identifier = id;
+    console.log(this.identifier)
   }
 
+  onClickDelete() {
+    this.teamService.deleteTeam(this.identifier)
+  }
 
   getPicsum() {
     this.picsumService.picsumCall().subscribe(x => {

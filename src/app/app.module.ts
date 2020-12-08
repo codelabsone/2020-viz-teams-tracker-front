@@ -17,6 +17,8 @@ import { MatFormFieldModule } from '@angular/material/form-field';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { MatSelectModule } from '@angular/material/select';
 import { AddmembermodalComponent } from './addmembermodal/addmembermodal.component';
+import { MatButtonModule } from '@angular/material/button';
+import { DialogContentExampleDialog } from './team-container/team-container.component'
 
 import { DragDropModule } from '@angular/cdk/drag-drop';
 import { AddTeamComponent } from './add-team/add-team.component'; //maybe
@@ -27,7 +29,8 @@ import { AddTeamComponent } from './add-team/add-team.component'; //maybe
     TeamsListComponent,
     TeamContainerComponent,
     AddmembermodalComponent,
-    AddTeamComponent
+    AddTeamComponent,
+    DialogContentExampleDialog
   ],
   imports: [
     BrowserModule,
@@ -45,9 +48,11 @@ import { AddTeamComponent } from './add-team/add-team.component'; //maybe
     FormsModule,
     ReactiveFormsModule,
     MatSelectModule,
-    DragDropModule //maybe
+    DragDropModule, //maybe
+    MatButtonModule
   ],
   providers: [],
+  entryComponents:[MatDialogModule],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

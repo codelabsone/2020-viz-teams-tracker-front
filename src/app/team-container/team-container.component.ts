@@ -5,6 +5,9 @@ import { TEAM } from '../mock-data/teams';
 import { Team } from '../model/team';
 import { Member } from '../model/member';
 import { StateService } from '../services/state.service';
+import { MatDialog } from '@angular/material/dialog';
+import { MatButtonModule } from '@angular/material/button';
+import { TeamService } from '../services/team.service';
 
 
 @Component({
@@ -18,7 +21,9 @@ export class TeamContainerComponent implements OnInit {
   selectedMember: Member;
   constructor(
     private memberService: MemberService,
-    private stateService: StateService
+    private stateService: StateService,
+    public dialog: MatDialog,
+    private teamService: TeamService
   ) { }
     ngOnInit() {
       this.stateService.selectedTeam.subscribe(x => {
@@ -53,4 +58,19 @@ export class TeamContainerComponent implements OnInit {
     clearMemberInfo() {
       this.memberView = false;
     }
+
+    openDialog() {
+      const dialogRef = this.dialog.open(DialogContentExampleDialog);
+
+      dialogRef.afterClosed().subscribe(result => {
+        console.log(`Dialog result: ${result}`);
+      });
+    }
+
 }
+
+@Component({
+  selector: 'dialog-content-example-dialog',
+  templateUrl: 'dialog-content-example-dialog.html',
+})
+export class DialogContentExampleDialog {}
