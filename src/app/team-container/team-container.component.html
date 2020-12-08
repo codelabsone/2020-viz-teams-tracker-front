@@ -1,39 +1,94 @@
 <mat-card>
-<div class="placeholder-text" *ngIf="team.members.length === 0">
+<div class="placeholder-text" *ngIf="!team">
   <mat-card-title >Select a team to view members.</mat-card-title>
 </div>
-  <mat-card-title *ngIf="team.members.length >= 1 && !memberView" class="team-name">{{ team.name }}</mat-card-title>
+<!-- Header -->
+<div class="page" *ngIf="team">
+<div class="header">
+  <mat-card-title id="mat-title1" *ngIf="!memberView" class="team-name">{{ team.name }}</mat-card-title>
   <mat-card-title id="click" *ngIf="memberView" class="team-name">
     <span (click) = "clearMemberInfo()">{{ team.name }}</span>
     >
     <span>{{ this.selectedMember.first_name }} {{this.selectedMember.last_name}}</span></mat-card-title>
-
-  <div class="team-list" *ngIf="!memberView">
+</div>
+<mat-divider></mat-divider>
+<!-- Content -->
+<div class="content">
+  <div class="team-list overflow" *ngIf="!memberView">
     <div class="member" *ngFor="let member of team.members">
       <div class="memberInfoContainer" (click)="showMemberInfo(member)">
         <img
         src="https://trello-attachments.s3.amazonaws.com/5f96cdcf742fd017660cfbad/5f96d1139638e35950daee78/x/05f14b5c78b771ed563b934c5d19bf68/avatar.png"
-        height="90px">
-        <h4 class="info">{{ member.first_name }} {{ member.last_name }} {{ member.title }}</h4>
+        height="110px">
+        <div class="info">
+          <h4 >{{ member.first_name }} {{ member.last_name }}<br>{{ member.title }}</h4>
+        </div>
       </div>
     </div>
   </div>
 
-  <div class="team-list" *ngIf="memberView">
+  <div class="team-list2" *ngIf="memberView">
     <div class="single-member">
-      <div class="memberInfoContainer">
-        <mat-divider></mat-divider>
-        <img class="memberImageDetail"
-        src="{{this.selectedMember.image}}">
-        <h4 class="memberInfo">{{ this.selectedMember.first_name }}
+      <div class="single-member-info-container">
+        <img class="memberImageDetail" id="memberImageDetail_id"
+        src="{{this.selectedMember.image}}" height="200px">
+        <div class="single-member-info">
+          {{ this.selectedMember.first_name }}
           {{ this.selectedMember.last_name }}
           <br>
           {{ this.selectedMember.title }}
           <br>
           coolemail@gmail.com <!-- add in dynamic data later -->
-        </h4>
+        </div>
       </div>
     </div>
   </div>
+</div>
+<mat-divider></mat-divider>
+<!-- Footer -->
+<div class="footer">
+  <mat-card-actions class="team-list-card-actions" id="button_box" *ngIf="memberView">
+    <span class="team-list-action-buttons">
+      <mat-icon
+      #tooltip="matTooltip"
+      [matTooltip]="'Edit ' + getSelectedMemberName()"
+      matTooltipPosition="above"
+      matTooltipHideDelay="0"
+      aria-label="Button that displays a tooltip that hides when scrolled out of the container"
+      class="pencil-button"
+      id="edit">edit</mat-icon>
+      <mat-icon
+      #tooltip="matTooltip"
+      [matTooltip]="'Archive ' + getSelectedMemberName()"
+      matTooltipPosition="above"
+      matTooltipHideDelay="0"
+      aria-label="Button that displays a tooltip that hides when scrolled out of the container"
+      class="archive-button"
+      id="archive">archive</mat-icon>
+    </span>
+</mat-card-actions>
 
+<mat-card-actions class="team-list-card-actions" id="button_box" *ngIf="!memberView">
+  <span class="team-list-action-buttons">
+    <mat-icon
+    #tooltip="matTooltip"
+    [matTooltip]="'Edit ' + getSelectedTeamName()"
+    matTooltipPosition="above"
+    matTooltipHideDelay="0"
+    aria-label="Button that displays a tooltip that hides when scrolled out of the container"
+    class="pencil-button"
+    id="edit">edit</mat-icon>
+    <mat-icon
+    #tooltip="matTooltip"
+    [matTooltip]="'Archive ' + getSelectedTeamName()"
+    matTooltipPosition="above"
+    matTooltipHideDelay="0"
+    aria-label="Button that displays a tooltip that hides when scrolled out of the container"
+    class="archive-button"
+    id="archive">archive</mat-icon>
+  </span>
+</mat-card-actions>
+</div>
+</div>
 </mat-card>
+

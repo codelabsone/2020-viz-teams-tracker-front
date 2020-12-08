@@ -34,6 +34,22 @@ export class TeamContainerComponent implements OnInit {
       this.memberView = true;
     }
 
+    getSelectedMemberName() {
+      if(this.selectedMember){
+        return this.selectedMember.first_name + " " + this.selectedMember.last_name;
+        console.log("Hello World");
+      }
+      return "";
+    }
+
+    getSelectedTeamName() {
+      if(this.team){
+        return this.team.name;
+      }
+      return "";
+    }
+
+
     clearMemberInfo() {
       this.memberView = false;
     }

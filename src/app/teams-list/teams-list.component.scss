@@ -14,6 +14,12 @@ color: grey;
 margin-left: -20px;
 }
 
+.noMembers {
+  color: grey;
+  display: flex;
+  justify-content: center;
+}
+
 mat-expansion-panel-body {
   padding: 2px;
   margin-left: 10px;

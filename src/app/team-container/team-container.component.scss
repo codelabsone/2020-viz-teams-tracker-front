@@ -1,76 +1,110 @@
 @import "./src/variables.scss";
-
-mat-card {
-  height: 76%;
-  width: 45vw;
-  overflow-y: scroll;
-}
-
-mat-card-title {
-  color: '$viz-grey';
+.page {
+  width: 100%;
+  height: 100%;
 }
 
 .placeholder-text {
-  width: 100%;
-  height: 100%;
   display: flex;
   justify-content: center;
   align-items: center;
-  color: red;
+  height: 100%;
+  color: darkgrey;
 }
 
-.team-name {
-  color: $viz-grey;
-  padding-top: 2%;
-  padding-left: 2%;
-  padding-bottom: 3%;
+.single-member-info-container {
+  display: flex;
+  margin-top: 20px;
+  margin-left: 5px;
+}
+
+.single-member-info {
+  font-size: 3.5vh;
+  line-height: 1.15;
+  margin-left: 8px;
+  display: flex;
+  align-items: flex-end;
+  color: darkgrey;
+}
+
+.header {
+  height: 10%;
+  display: flex;
+  align-items: center;
+  color: darkgrey;
+}
+
+.content {
+  height: 82%;
+  display: flex;
+
+}
+
+.footer {
+  height: 8%;
+  // align-items: center;
+}
+
+.team-list-card-actions {
+  padding-top: 16px;
+}
+
+.team-list-action-buttons {
+  display: flex;
+  justify-content: flex-end;
   width: 100%;
+  padding-left: 20px;
+}
+
+mat-icon {
+  font-size: 35px;
+  color: grey;
+  padding-left: 30px;
+  padding-right: 28px;
 }
 
 .team-list {
   display: flex;
-  flex-direction: row;
-  max-width: 100%;
+  height: calc(100% - 20px);
   flex-wrap: wrap;
-  padding-left: 2%;
+  overflow: auto;
+  padding: 10px;
 }
 
 .member {
-  display: flex;
-  flex-direction: row;
   width: 50%;
-  padding-bottom: 2%;
+  display: flex;
+  flex-direction: flex-start;
+}
+.memberInfoContainer {
+  display: flex;
+  padding-top: 8px;
 }
 
 .info {
-  padding-top: 10%;
-  padding-left: 1%;
-  color: '$viz-grey';
-}
-
-.memberInfoContainer{
   display: flex;
-  font-size: 25px;
+  height: 100%;
+  align-items: flex-end;
+  margin-left: 5px;
   color: grey;
- }
-
- .memberImageDetail {
-   height: 130px;
-   width: 130px;
-   padding-top: 15px;
-   padding-left: -10px;
- }
-
-.memberInfo {
-  font-size: 20px;
-  padding-top:70px;
-  padding-left: 10px;
+  h4 {
+    margin: 0;
+    font-size: 2.2vh;
+  }
+  // justify-content: flex;
 }
 
-.single-member {
-  margin-left: -2%;
+
+mat-card {
+  height: 76%;
+  width: 45vw;
 }
 
-#click {
-  padding: 5px;
+mat-card-title {
+  font-size: 4vh;
 }
+
+mat-card-actions {
+  margin-right: 10px;
+}
+
