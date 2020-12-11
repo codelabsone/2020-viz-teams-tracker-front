@@ -8,7 +8,8 @@ import { StateService } from '../services/state.service';
 import { AddTeamComponent } from '../add-team/add-team.component';
 import { Member } from '../model/member';
 import { PicsumRequestService } from '../services/picsum-request.service';
-import { TeamService } from '../services/team.service'
+import { TeamService } from '../services/team.service';
+import { HttpClient } from '@angular/common/http';
 
 
 @Component({
@@ -24,6 +25,7 @@ export class TeamsListComponent implements OnInit{
     private stateService: StateService,
     private picsumService: PicsumRequestService,
     private teamService: TeamService,
+    private http: HttpClient
 
   ) { }
 
@@ -81,14 +83,11 @@ export class TeamsListComponent implements OnInit{
     memberToUpdate.team_Id = teamId;
   }
 
-  selectedTeam(team:Team, id:Number) {
+  selectedTeam(team:Team, id:number) {
     this.stateService.selectedTeam.next(team);
-    this.identifier = id;
-    console.log(this.identifier)
-  }
-
-  onClickDelete() {
-    this.teamService.deleteTeam(this.identifier)
+    // this.identifier = id;
+    this.teamService.sendMessage(team.id)
+    // console.log(id)
   }
 
   getPicsum() {
@@ -96,6 +95,5 @@ export class TeamsListComponent implements OnInit{
       console.log(x)
     });
   }
-
 
 }

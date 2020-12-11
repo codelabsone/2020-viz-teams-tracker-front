@@ -1,6 +1,6 @@
 import { HttpClient } from '@angular/common/http';
 import { Injectable } from '@angular/core';
-import { Observable } from 'rxjs';
+import { Observable, Subject } from 'rxjs';
 import { Team } from '../model/team';
 
 @Injectable({
@@ -8,9 +8,10 @@ import { Team } from '../model/team';
 })
 export class TeamService {
 
-  constructor(private http: HttpClient) { }
+  constructor(private http: HttpClient) {
+   }
 
-  status: any;
+  private subject = new Subject<any>();
 
   addTeam(team: Team) {
     return this.http.post("https://loea-back-test.herokuapp.com/teams", team)
@@ -20,10 +21,12 @@ export class TeamService {
     return this.http.get<Team[]>("https://loea-back-test.herokuapp.com/teams")
   }
 
-  deleteTeam(id: Number) {
-    this.http.delete('https://loea-back-test.herokuapp.com/teams' + id)
-    .subscribe(() => this.status = 'Delete successful');
+  sendMessage(message: number) {
+    this.subject.next(message);
   }
 
+  onMessage(): Observable<any> {
+    return this.subject.asObservable();
+}
 
 }

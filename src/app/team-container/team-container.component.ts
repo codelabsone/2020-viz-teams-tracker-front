@@ -8,6 +8,9 @@ import { StateService } from '../services/state.service';
 import { MatDialog } from '@angular/material/dialog';
 import { MatButtonModule } from '@angular/material/button';
 import { TeamService } from '../services/team.service';
+import { HttpClient } from '@angular/common/http';
+import { DeletemodalComponent } from '../modals/deletemodal/deletemodal.component';
+// import { TeamsListComponent } from '../teams-list/teams-list.component'
 
 
 @Component({
@@ -23,7 +26,7 @@ export class TeamContainerComponent implements OnInit {
     private memberService: MemberService,
     private stateService: StateService,
     public dialog: MatDialog,
-    private teamService: TeamService
+    private teamService: TeamService,
   ) { }
     ngOnInit() {
       this.stateService.selectedTeam.subscribe(x => {
@@ -42,7 +45,6 @@ export class TeamContainerComponent implements OnInit {
     getSelectedMemberName() {
       if(this.selectedMember){
         return this.selectedMember.first_name + " " + this.selectedMember.last_name;
-        console.log("Hello World");
       }
       return "";
     }
@@ -60,7 +62,7 @@ export class TeamContainerComponent implements OnInit {
     }
 
     openDialog() {
-      const dialogRef = this.dialog.open(DialogContentExampleDialog);
+      const dialogRef = this.dialog.open(DeletemodalComponent);
 
       dialogRef.afterClosed().subscribe(result => {
         console.log(`Dialog result: ${result}`);
@@ -69,8 +71,3 @@ export class TeamContainerComponent implements OnInit {
 
 }
 
-@Component({
-  selector: 'dialog-content-example-dialog',
-  templateUrl: 'dialog-content-example-dialog.html',
-})
-export class DialogContentExampleDialog {}

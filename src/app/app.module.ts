@@ -18,10 +18,10 @@ import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { MatSelectModule } from '@angular/material/select';
 import { AddmembermodalComponent } from './addmembermodal/addmembermodal.component';
 import { MatButtonModule } from '@angular/material/button';
-import { DialogContentExampleDialog } from './team-container/team-container.component'
 
 import { DragDropModule } from '@angular/cdk/drag-drop';
-import { AddTeamComponent } from './add-team/add-team.component'; //maybe
+import { AddTeamComponent } from './add-team/add-team.component';
+import { DeletemodalComponent } from './modals/deletemodal/deletemodal.component'; //maybe
 
 @NgModule({
   declarations: [
@@ -30,7 +30,7 @@ import { AddTeamComponent } from './add-team/add-team.component'; //maybe
     TeamContainerComponent,
     AddmembermodalComponent,
     AddTeamComponent,
-    DialogContentExampleDialog
+    DeletemodalComponent
   ],
   imports: [
     BrowserModule,
