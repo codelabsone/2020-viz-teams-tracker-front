@@ -1,11 +1,11 @@
 import { Component, EventEmitter, Inject, OnInit, Output } from '@angular/core';
 import { MAT_DIALOG_DATA } from '@angular/material/dialog';
-import { TEAM } from '../mock-data/teams';
-import { Team } from '../model/team';
-import { TeamsListComponent } from '../teams-list/teams-list.component';
 import { PicsumRequestService } from '../services/picsum-request.service';
-import { StateService } from '../services/state.service';
 import { PageEvent } from '@angular/material/paginator';
+import { MemberService } from '../services/member.service';
+import { FormControl, FormGroup, Validators } from '@angular/forms';
+import { MatDialogRef } from '@angular/material/dialog';
+import { TeamService } from '../services/team.service';
 
 @Component({
   selector: 'app-addmembermodal',
@@ -13,21 +13,41 @@ import { PageEvent } from '@angular/material/paginator';
   styleUrls: ['./addmembermodal.component.scss']
 })
 export class AddmembermodalComponent implements OnInit {
-  public teams:Team[] = TEAM;
   selected = false;
-  // clicked = false;
 
-  constructor(@Inject(MAT_DIALOG_DATA) public data: any,
-          private picsumService: PicsumRequestService) { }
+  newMemberInfo: FormGroup = new FormGroup({
+    first_name: new FormControl("", [Validators.required]),
+    last_name: new FormControl("", [Validators.required]),
+    title: new FormControl("", [Validators.required]),
+    team_id: new FormControl("", [Validators.required]),
+    image: new FormControl("", [Validators.required]),
+  });
 
+  addNewMember () {
+    this.memberService.addMember(this.newMemberInfo.value).subscribe(data=>{
+      console.log(data);
+      this.dialogRef.close(data);
+    })
+  }
+
+  constructor(@Inject(MAT_DIALOG_DATA,) public data: any,
+          private dialogRef: MatDialogRef<AddmembermodalComponent>,
+          private picsumService: PicsumRequestService,
+          private memberService: MemberService,
+          private teamService: TeamService
+          ) { }
+  teams: any[];
   pictures: any[];
   selectedPicture: any;
   ngOnInit(): void {
-    // this.picsumService.picsumCall().subscribe(x => {console.log});
     this.picsumService.picsumCall(1).subscribe(
       data => {this.pictures = data;
       console.log(this.pictures)
       })
+    this.teamService.getTeamData().subscribe(
+      teamData => { this.teams = teamData;
+      }
+    )
   }
 
   length = 100;
@@ -41,13 +61,6 @@ export class AddmembermodalComponent implements OnInit {
     }
   }
 
-  // nextPage() {
-  //   this.picsumService.pageNumber = this.picsumService.pageNumber + 1;
-  //   this.picsumService.picsumCall().subscribe(
-  //     data => {this.pictures = data;
-  //   })
-  // }
-
   changePage(event: PageEvent) {
     this.picsumService.picsumCall(event.pageIndex + 1).subscribe(
       data => this.pictures = data
@@ -57,6 +70,8 @@ export class AddmembermodalComponent implements OnInit {
 
   onSelected(image: any) {
     this.selectedPicture = image;
-
+    this.newMemberInfo.get("image").setValue(this.selectedPicture.download_url)
   }
+
+
 }

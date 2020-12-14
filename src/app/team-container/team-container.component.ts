@@ -1,7 +1,5 @@
 import { Component, OnInit } from '@angular/core';
 import { MemberService } from '.././services/member.service';
-import { MEMBERS } from '../mock-data/members';
-import { TEAM } from '../mock-data/teams';
 import { Team } from '../model/team';
 import { Member } from '../model/member';
 import { StateService } from '../services/state.service';
@@ -52,5 +50,13 @@ export class TeamContainerComponent implements OnInit {
 
     clearMemberInfo() {
       this.memberView = false;
+    }
+
+    checkPic (member) {
+      if(member.image) {
+        return member.image
+      }else {
+        return "https://trello-attachments.s3.amazonaws.com/5f96cdcf742fd017660cfbad/5fa9c7ad160efe09f2b836bf/x/7d82bd8a081aadd9d95d0020cec51e98/avatar.png"
+      }
     }
 }

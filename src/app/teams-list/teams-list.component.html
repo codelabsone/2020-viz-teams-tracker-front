@@ -23,8 +23,8 @@
               cdkDropListOrientation="horizontal">
                 <img *ngFor="let member of team.members"
                   cdkDrag
-                  class="member-pic"
-                  src= "https://trello-attachments.s3.amazonaws.com/5f96cdcf742fd017660cfbad/5f96d1139638e35950daee78/x/05f14b5c78b771ed563b934c5d19bf68/avatar.png"
+                  class= "member-pic"
+                  src= "{{member.image}}"
                   alt=""
                   matTooltip="{{member.first_name}} {{member.last_name}}"
                   matTooltipPosition="above"

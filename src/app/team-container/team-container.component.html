@@ -18,8 +18,8 @@
     <div class="member" *ngFor="let member of team.members">
       <div class="memberInfoContainer" (click)="showMemberInfo(member)">
         <img
-        src="https://trello-attachments.s3.amazonaws.com/5f96cdcf742fd017660cfbad/5f96d1139638e35950daee78/x/05f14b5c78b771ed563b934c5d19bf68/avatar.png"
-        height="110px">
+        [src]="checkPic(member)"
+        height="100px" width="100px">
         <div class="info">
           <h4 >{{ member.first_name }} {{ member.last_name }}<br>{{ member.title }}</h4>
         </div>

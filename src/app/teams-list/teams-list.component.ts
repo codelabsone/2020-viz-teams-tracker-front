@@ -1,6 +1,5 @@
 import { Component, OnInit } from '@angular/core';
 import { Team } from '../model/team';
-import { TEAM } from '../mock-data/teams';
 import { MatDialog } from '@angular/material/dialog';
 import { AddmembermodalComponent} from '../addmembermodal/addmembermodal.component'
 import { CdkDragDrop, moveItemInArray, transferArrayItem} from '@angular/cdk/drag-drop';
@@ -17,7 +16,6 @@ import { TeamService } from '../services/team.service'
   styleUrls: ['./teams-list.component.scss']
 })
 export class TeamsListComponent implements OnInit{
-  public teams:Team[] = TEAM;
 
   constructor(
     public dialog: MatDialog,
@@ -50,10 +48,20 @@ export class TeamsListComponent implements OnInit{
     const dialogRef = this.dialog.open(AddmembermodalComponent, {
       data: {
         team,
-        allTeams: this.teams
+        allTeams: this.teaminfo
       }
     }
       );
+      dialogRef.afterClosed().subscribe(result => {
+        console.log(`Dialog result: ${result}`);
+        if(result) {
+          this.teaminfo.forEach(team =>{
+            if(team.id === result.team_id) {
+              team.members.push(result);
+            }
+          })
+        }
+      });
   }
 
   getAllTeams() {
@@ -76,7 +84,7 @@ export class TeamsListComponent implements OnInit{
         event.previousIndex,
         event.currentIndex);
     }
-    memberToUpdate.team_Id = teamId;
+    memberToUpdate.team_id = teamId;
   }
 
   selectedTeam(team:Team) {

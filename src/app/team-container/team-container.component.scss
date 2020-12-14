@@ -73,18 +73,22 @@ mat-icon {
 
 .member {
   width: 50%;
-  display: flex;
-  flex-direction: flex-start;
+  // display: flex;
+  // flex-direction: flex-start;
 }
 .memberInfoContainer {
   display: flex;
+  // flex-direction: column;
+  // justify-content: center;
+  // align-content: center;
+  width: 100%;
   padding-top: 8px;
 }
 
 .info {
   display: flex;
-  height: 100%;
-  align-items: flex-end;
+  height: 110px;
+  align-items: center;
   margin-left: 5px;
   color: grey;
   h4 {
