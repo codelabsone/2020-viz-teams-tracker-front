@@ -72,19 +72,22 @@ export class TeamsListComponent implements OnInit{
   drop(event: CdkDragDrop<Member[]>, teamId: number) {
     const memberToUpdate = event.previousContainer.data[event.previousIndex];
     console.log(memberToUpdate);
-
     if (event.previousContainer === event.container) {
       moveItemInArray(event.container.data, event.previousIndex, event.currentIndex);
     } else {
-      console.log("PreviousContainer", event.previousContainer)
+      if(event.container.data.length >= 12) {
+        
+      } else {
+        console.log("PreviousContainer", event.previousContainer)
       console.log("CurrentContainer", event.container)
       transferArrayItem(
         event.previousContainer.data,
         event.container.data,
         event.previousIndex,
         event.currentIndex);
+        memberToUpdate.team_id = teamId;
+      }
     }
-    memberToUpdate.team_id = teamId;
   }
 
   selectedTeam(team:Team) {
