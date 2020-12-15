@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, Inject } from '@angular/core';
 import { MemberService } from '.././services/member.service';
 import { MEMBERS } from '../mock-data/members';
 import { TEAM } from '../mock-data/teams';
@@ -10,6 +10,8 @@ import { MatButtonModule } from '@angular/material/button';
 import { TeamService } from '../services/team.service';
 import { HttpClient } from '@angular/common/http';
 import { DeletemodalComponent } from '../modals/deletemodal/deletemodal.component';
+
+
 // import { TeamsListComponent } from '../teams-list/teams-list.component'
 
 
@@ -62,10 +64,8 @@ export class TeamContainerComponent implements OnInit {
     }
 
     openDialog() {
-      const dialogRef = this.dialog.open(DeletemodalComponent);
-
-      dialogRef.afterClosed().subscribe(result => {
-        console.log(`Dialog result: ${result}`);
+      let dialogRef = this.dialog.open(DeletemodalComponent, {
+        data: this.team.id ,
       });
     }
 

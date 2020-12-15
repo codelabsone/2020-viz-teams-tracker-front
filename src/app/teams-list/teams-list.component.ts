@@ -85,9 +85,8 @@ export class TeamsListComponent implements OnInit{
 
   selectedTeam(team:Team, id:number) {
     this.stateService.selectedTeam.next(team);
-    // this.identifier = id;
-    this.teamService.sendMessage(team.id)
-    // console.log(id)
+    this.teamService.sendMessage(team.id);
+    // console.log(team.id)
   }
 
   getPicsum() {

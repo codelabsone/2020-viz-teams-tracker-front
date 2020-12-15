@@ -27,6 +27,12 @@ export class TeamService {
 
   onMessage(): Observable<any> {
     return this.subject.asObservable();
-}
+  }
+
+
+  deleteTeam(id) {
+    this.http.delete("https://loea-back-test.herokuapp.com/teams/" + id)
+  }
+
 
 }
