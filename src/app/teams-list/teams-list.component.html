@@ -15,6 +15,7 @@
           </mat-panel-description>
         </mat-expansion-panel-header>
         <mat-action-row>
+            <div style="margin-right: 30px; color: black;">{{team.members.length}}/12</div>
             <mat-icon id="addMember" (click)="openDialog(team)">person_add</mat-icon>
         </mat-action-row>
             <div cdkDropList class="drag-photo-list team-member-container"
