@@ -8,6 +8,7 @@ import { AddTeamComponent } from '../add-team/add-team.component';
 import { Member } from '../model/member';
 import { PicsumRequestService } from '../services/picsum-request.service';
 import { TeamService } from '../services/team.service'
+import { MemberService } from '../services/member.service';
 
 
 @Component({
@@ -22,6 +23,7 @@ export class TeamsListComponent implements OnInit{
     private stateService: StateService,
     private picsumService: PicsumRequestService,
     private teamService: TeamService,
+    private memberService: MemberService
 
   ) { }
 
@@ -69,24 +71,27 @@ export class TeamsListComponent implements OnInit{
     console.log("Hello");
   }
 
-  drop(event: CdkDragDrop<Member[]>, teamId: number) {
-    const memberToUpdate = event.previousContainer.data[event.previousIndex];
+  drop(event: CdkDragDrop<Member[]>, team: Team) {
+    const memberToUpdate: Member = event.previousContainer.data[event.previousIndex];
     console.log(memberToUpdate);
     if (event.previousContainer === event.container) {
       moveItemInArray(event.container.data, event.previousIndex, event.currentIndex);
     } else {
       if(event.container.data.length >= 12) {
-        
+        team.memberNumberCount12 = true;
+        setTimeout(() => {  team.memberNumberCount12 = false; }, 3000);
       } else {
         console.log("PreviousContainer", event.previousContainer)
-      console.log("CurrentContainer", event.container)
-      transferArrayItem(
-        event.previousContainer.data,
-        event.container.data,
-        event.previousIndex,
-        event.currentIndex);
-        memberToUpdate.team_id = teamId;
+        console.log("CurrentContainer", event.container)
+        transferArrayItem(
+          event.previousContainer.data,
+          event.container.data,
+          event.previousIndex,
+          event.currentIndex);
+          memberToUpdate.team_id = team.id;
+          this.memberService.updateMemberData(memberToUpdate).subscribe()
       }
+
     }
   }
 

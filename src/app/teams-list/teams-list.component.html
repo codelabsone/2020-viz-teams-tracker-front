@@ -15,12 +15,13 @@
           </mat-panel-description>
         </mat-expansion-panel-header>
         <mat-action-row>
+            <div style="margin-right: 25px; color: red;" *ngIf="team.memberNumberCount12">Team size limited to 12 members</div>
             <div style="margin-right: 30px; color: black;">{{team.members.length}}/12</div>
             <mat-icon id="addMember" (click)="openDialog(team)">person_add</mat-icon>
         </mat-action-row>
             <div cdkDropList class="drag-photo-list team-member-container"
              [cdkDropListData]="team.members"
-              (cdkDropListDropped)="drop($event, team.id)"
+              (cdkDropListDropped)="drop($event, team)"
               cdkDropListOrientation="horizontal">
                 <img *ngFor="let member of team.members"
                   cdkDrag
@@ -31,7 +32,7 @@
                   matTooltipPosition="above"
                   aria-label="Button that displays a tooltip when focused or hovered over">
           </div>
-          <div class="noMembers" *ngIf="!team.members">
+          <div class="noMembers" *ngIf="team.members.length === 0">
             No members on this team
           </div>
       </mat-expansion-panel>
