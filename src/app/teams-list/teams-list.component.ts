@@ -28,9 +28,12 @@ export class TeamsListComponent implements OnInit{
   ) { }
 
   teaminfo: Team[];
+    progressBar = false
 
-  ngOnInit(): void {
-    this.getAllTeams();
+    ngOnInit(): void {
+    this.progressBar = true
+    setTimeout(() => {  this.progressBar = false; }, 2000)
+    setTimeout(() => {  this.getAllTeams(); }, 2000)
   }
 
 

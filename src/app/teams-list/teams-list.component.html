@@ -1,8 +1,9 @@
 <mat-card class="team-list-container">
   <div class="team-list-card-container">
   <mat-card-header style="border-bottom: solid 1px lightgray;">
-    Teams
+    <div>Teams</div>
   </mat-card-header>
+  <mat-progress-bar *ngIf="progressBar" mode="indeterminate"></mat-progress-bar>
   <mat-card-content class="team-list-card-content">
     <mat-accordion cdkDropListGroup multi="true">
       <mat-expansion-panel *ngFor="let team of teaminfo">
