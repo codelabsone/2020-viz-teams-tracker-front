@@ -1,3 +1,4 @@
+import { HttpClient } from '@angular/common/http';
 import { MemberService } from './../services/member.service';
 import { Component, OnInit } from '@angular/core';
 import { Team } from '../model/team';
@@ -8,8 +9,8 @@ import { StateService } from '../services/state.service';
 import { AddTeamComponent } from '../add-team/add-team.component';
 import { Member } from '../model/member';
 import { PicsumRequestService } from '../services/picsum-request.service';
-import { TeamService } from '../services/team.service';
-import { HttpClient } from '@angular/common/http';
+import { TeamService } from '../services/team.service'
+import { MatExpansionPanel } from '@angular/material/expansion';
 
 
 @Component({
@@ -107,10 +108,10 @@ export class TeamsListComponent implements OnInit{
     // console.log(team.id)
   }
 
-  // getPicsum() {
-  //   this.picsumService.picsumCall().subscribe(x => {
-  //     console.log(x)
-  //   });
-  // }
+  mouseEnterHandler(event: MouseEvent, expansionPanel: MatExpansionPanel) {
+    if (event.buttons && !expansionPanel.expanded) {
+      expansionPanel.open();
+    }
+  }
 
 }
