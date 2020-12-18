@@ -33,7 +33,7 @@ export class TeamsListComponent implements OnInit{
     ngOnInit(): void {
     this.progressBar = true
     setTimeout(() => {  this.progressBar = false; }, 2000)
-    setTimeout(() => {  this.getAllTeams(); }, 2000)
+    this.getAllTeams();
   }
 
 
