@@ -1,6 +1,6 @@
+import { MemberService } from './../services/member.service';
 import { Component, OnInit } from '@angular/core';
 import { Team } from '../model/team';
-import { TEAM } from '../mock-data/teams';
 import { MatDialog } from '@angular/material/dialog';
 import { AddmembermodalComponent} from '../addmembermodal/addmembermodal.component'
 import { CdkDragDrop, moveItemInArray, transferArrayItem} from '@angular/cdk/drag-drop';
@@ -18,21 +18,24 @@ import { HttpClient } from '@angular/common/http';
   styleUrls: ['./teams-list.component.scss']
 })
 export class TeamsListComponent implements OnInit{
-  public teams:Team[] = TEAM;
 
   constructor(
     public dialog: MatDialog,
     private stateService: StateService,
     private picsumService: PicsumRequestService,
     private teamService: TeamService,
-    private http: HttpClient
+    private http: HttpClient,
+    private memberService: MemberService
 
   ) { }
 
   teaminfo: Team[];
   identifier: Number = null;
+    progressBar = false
 
-  ngOnInit(): void {
+    ngOnInit(): void {
+    this.progressBar = true
+    setTimeout(() => {  this.progressBar = false; }, 2000)
     this.getAllTeams();
   }
 
@@ -53,10 +56,20 @@ export class TeamsListComponent implements OnInit{
     const dialogRef = this.dialog.open(AddmembermodalComponent, {
       data: {
         team,
-        allTeams: this.teams
+        allTeams: this.teaminfo
       }
     }
       );
+      dialogRef.afterClosed().subscribe(result => {
+        console.log(`Dialog result: ${result}`);
+        if(result) {
+          this.teaminfo.forEach(team =>{
+            if(team.id === result.team_id) {
+              team.members.push(result);
+            }
+          })
+        }
+      });
   }
 
   getAllTeams() {
@@ -64,23 +77,28 @@ export class TeamsListComponent implements OnInit{
     console.log("Hello");
   }
 
-  drop(event: CdkDragDrop<Member[]>, teamId: number) {
-    const memberToUpdate = event.previousContainer.data[event.previousIndex];
+  drop(event: CdkDragDrop<Member[]>, team: Team) {
+    const memberToUpdate: Member = event.previousContainer.data[event.previousIndex];
     console.log(memberToUpdate);
-
     if (event.previousContainer === event.container) {
       moveItemInArray(event.container.data, event.previousIndex, event.currentIndex);
+    } else {
+      if(event.container.data.length >= 12) {
+        team.memberNumberCount12 = true;
+        setTimeout(() => {  team.memberNumberCount12 = false; }, 3000);
+      } else {
+        console.log("PreviousContainer", event.previousContainer)
+        console.log("CurrentContainer", event.container)
+        transferArrayItem(
+          event.previousContainer.data,
+          event.container.data,
+          event.previousIndex,
+          event.currentIndex);
+          memberToUpdate.team_id = team.id;
+          this.memberService.updateMemberData(memberToUpdate).subscribe()
+      }
+
     }
-    else {
-      console.log("PreviousContainer", event.previousContainer)
-      console.log("CurrentContainer", event.container)
-      transferArrayItem(
-        event.previousContainer.data,
-        event.container.data,
-        event.previousIndex,
-        event.currentIndex);
-    }
-    memberToUpdate.team_Id = teamId;
   }
 
   selectedTeam(team:Team, id:number) {
@@ -89,10 +107,10 @@ export class TeamsListComponent implements OnInit{
     // console.log(team.id)
   }
 
-  getPicsum() {
-    this.picsumService.picsumCall().subscribe(x => {
-      console.log(x)
-    });
-  }
+  // getPicsum() {
+  //   this.picsumService.picsumCall().subscribe(x => {
+  //     console.log(x)
+  //   });
+  // }
 
 }

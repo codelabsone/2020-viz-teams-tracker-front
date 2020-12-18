@@ -7,12 +7,11 @@ import { Observable } from 'rxjs';
 })
 export class PicsumRequestService {
 
-  picUrl = 'https://picsum.photos/v2/list?limit=100'
   constructor(
     public http: HttpClient
   ) { }
 
-  picsumCall() : Observable<any> {
-     return this.http.get(this.picUrl)
+  picsumCall(pageNumber: number) : Observable<any> {
+     return this.http.get('https://picsum.photos/v2/list?page=' + pageNumber + '&limit=5')
   }
 }

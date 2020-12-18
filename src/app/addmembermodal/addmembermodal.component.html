@@ -1,29 +1,41 @@
-<form class="example-form">
-  <div class="input-hold">
-    <div class="">
-      <mat-form-field class="example-full-width">
-        <!-- <mat-label>First Name</mat-label> -->
-        <input matInput placeholder="First Name">
-      </mat-form-field>
-      <mat-form-field class="example-full-width">
-        <mat-select placeholder="Title">
-          <mat-option value="option1">Software Engineer</mat-option>
-          <mat-option value="option2">Quality Engineer</mat-option>
-          <mat-option value="option3">Team Anchor</mat-option>
-        </mat-select>
-      </mat-form-field>
+<div class="modal">
+  <div class="pic-selector">
+    <div class="row pic-row" *ngFor="let pic of pictures">
+        <img [ngClass]="{'selected' : pic === selectedPicture, 'notSelect' : pic !== selectedPicture}" (click)="onSelected(pic)" src="{{pic.download_url}}">
     </div>
-    <div class="">
-      <mat-form-field class="example-full-width space">
-        <input matInput placeholder="Last Name">
-      </mat-form-field>
-      <mat-form-field class="example-full-width space">
-        <mat-select placeholder="{{data.team.name}}">
-          <mat-option value="" *ngFor="let team of data.allTeams">{{team.name}}</mat-option>
-        </mat-select>
-      </mat-form-field>
+    <br>
     </div>
-  </div>
-  <button mat-button style="margin-left: 2%;">Submit</button>
-  <button mat-button>Cancel</button>
-</form>
+    <mat-paginator [length]="100" [pageSize]="5" [pageSizeOptions]="[5]"
+    (page)="changePage($event)">
+    </mat-paginator>
+    <form class="example-form" [formGroup]="newMemberInfo">
+      <div class="input-hold">
+        <div class="input-holder">
+          <mat-form-field class="example-full-width">
+            <input matInput placeholder="First Name" formControlName="first_name">
+          </mat-form-field>
+          <mat-form-field class="example-full-width">
+            <mat-select placeholder="Title" formControlName="title">
+              <mat-option value="Software Engineer">Software Engineer</mat-option>
+              <mat-option value="Quality Engineer">Quality Engineer</mat-option>
+              <mat-option value="Team Anchor">Team Anchor</mat-option>
+            </mat-select>
+          </mat-form-field>
+        </div>
+        <div class="input-holder">
+          <mat-form-field class="example-full-width space">
+            <input matInput placeholder="Last Name" formControlName="last_name">
+          </mat-form-field>
+          <mat-form-field class="example-full-width space">
+            <mat-select placeholder="{{data.team.name}}" formControlName="team_id">
+              <mat-option [value]="team.id" *ngFor="let team of teams">{{team.name}}</mat-option>
+            </mat-select>
+          </mat-form-field>
+        </div>
+      </div>
+      <!-- <div class="btn-hold"> -->
+        <button mat-button style="margin-left: 2%; margin-right: 2%;" (click)="addNewMember()">Submit</button>
+        <button mat-button>Cancel</button>
+      <!-- </div> -->
+    </form>
+</div>
