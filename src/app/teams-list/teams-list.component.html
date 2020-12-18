@@ -43,6 +43,15 @@
         <span class="team-list-action-buttons">
           <mat-icon
           #tooltip="matTooltip"
+          [matTooltip]="'Edit Team'"
+          matTooltipPosition="above"
+          matTooltipHideDelay="1000"
+          aria-label="Button that displays a tooltip that hides when scrolled out of the container"
+          class="pencil-button"
+          id="editTeam"
+          (click)="openEditTeam()">edit</mat-icon>
+          <mat-icon
+          #tooltip="matTooltip"
           matTooltip="Add Team"
           matTooltipPosition="above"
           matTooltipHideDelay="1000"

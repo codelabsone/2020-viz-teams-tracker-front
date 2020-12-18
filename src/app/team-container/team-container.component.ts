@@ -3,6 +3,8 @@ import { MemberService } from '.././services/member.service';
 import { Team } from '../model/team';
 import { Member } from '../model/member';
 import { StateService } from '../services/state.service';
+import { MatDialog } from '@angular/material/dialog';
+import { EditTeamModalComponent } from '../edit-team-modal/edit-team-modal.component';
 
 
 @Component({
@@ -16,7 +18,8 @@ export class TeamContainerComponent implements OnInit {
   selectedMember: Member;
   constructor(
     private memberService: MemberService,
-    private stateService: StateService
+    private stateService: StateService,
+    public dialog: MatDialog,
   ) { }
     ngOnInit() {
       this.stateService.selectedTeam.subscribe(x => {
@@ -59,4 +62,6 @@ export class TeamContainerComponent implements OnInit {
         return "https://trello-attachments.s3.amazonaws.com/5f96cdcf742fd017660cfbad/5fa9c7ad160efe09f2b836bf/x/7d82bd8a081aadd9d95d0020cec51e98/avatar.png"
       }
     }
+
+
 }

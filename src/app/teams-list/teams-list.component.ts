@@ -10,6 +10,7 @@ import { PicsumRequestService } from '../services/picsum-request.service';
 import { TeamService } from '../services/team.service'
 import { MemberService } from '../services/member.service';
 import { MatExpansionPanel } from '@angular/material/expansion';
+import { EditTeamModalComponent } from '../edit-team-modal/edit-team-modal.component';
 
 
 @Component({
@@ -107,6 +108,17 @@ export class TeamsListComponent implements OnInit{
     if (event.buttons && !expansionPanel.expanded) {
       expansionPanel.open();
     }
+  }
+
+  openEditTeam(){
+    const dialogRef = this.dialog.open(EditTeamModalComponent)
+
+    dialogRef.afterClosed().subscribe(result => {
+      console.log(`Dialog result: ${result}`);
+      if(result) {
+        console.log(result)
+      }
+    });
   }
 
 }
