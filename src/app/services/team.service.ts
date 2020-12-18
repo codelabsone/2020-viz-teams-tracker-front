@@ -31,7 +31,7 @@ export class TeamService {
 
 
   deleteTeam(id) {
-    this.http.delete("https://loea-back-test.herokuapp.com/teams/" + id)
+    return this.http.delete("https://loea-back-test.herokuapp.com/teams/" + id)
   }
 
 
