@@ -9,6 +9,7 @@ import { Member } from '../model/member';
 import { PicsumRequestService } from '../services/picsum-request.service';
 import { TeamService } from '../services/team.service'
 import { MemberService } from '../services/member.service';
+import { MatExpansionPanel } from '@angular/material/expansion';
 
 
 @Component({
@@ -100,6 +101,12 @@ export class TeamsListComponent implements OnInit{
 
   selectedTeam(team:Team) {
     this.stateService.selectedTeam.next(team);
+  }
+
+  mouseEnterHandler(event: MouseEvent, expansionPanel: MatExpansionPanel) {
+    if (event.buttons && !expansionPanel.expanded) {
+      expansionPanel.open();
+    }
   }
 
 }
