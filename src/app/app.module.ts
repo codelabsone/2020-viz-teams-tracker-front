@@ -21,6 +21,7 @@ import {MatPaginatorModule} from '@angular/material/paginator';
 import { DragDropModule } from '@angular/cdk/drag-drop';
 import { AddTeamComponent } from './add-team/add-team.component';
 import { MatProgressBarModule } from '@angular/material/progress-bar';
+import { DeletemodalComponent } from './modals/deletemodal/deletemodal.component';
 
 @NgModule({
   declarations: [
@@ -30,6 +31,7 @@ import { MatProgressBarModule } from '@angular/material/progress-bar';
     AddmembermodalComponent,
     AddTeamComponent,
     DeletemodalComponent
+
   ],
   imports: [
     BrowserModule,
@@ -49,7 +51,8 @@ import { MatProgressBarModule } from '@angular/material/progress-bar';
     MatSelectModule,
     DragDropModule,
     MatPaginatorModule,
-    MatProgressBarModule
+    MatProgressBarModule,
+
   ],
   providers: [],
   entryComponents:[MatDialogModule],

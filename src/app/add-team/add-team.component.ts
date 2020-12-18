@@ -24,6 +24,7 @@ export class AddTeamComponent implements OnInit {
   addNewTeam () {
     this.teamService.addTeam(this.garbage.value).subscribe(data=>{
       console.log(data);
+      data['members']= []
       this.dialogRef.close(data);
     })
   }
